@@ -1,0 +1,180 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #000000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #000000;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+footer {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Game Section Styles */
+.hero {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid #000000;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.room-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border: 1px solid #000000;
+}
+
+.card:hover {
+    background: #f5f5f5;
+}
+
+.card h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.difficulty {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #f0f0f0;
+    border: 1px solid #000000;
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: bold;
+}
+
+.info-box {
+    background: #ffffff;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid #000000;
+    border-left: 5px solid #000000;
+}
+
+.info-box h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.info-box ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-box li {
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+    }
+}
