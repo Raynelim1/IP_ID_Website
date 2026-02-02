@@ -31,6 +31,10 @@
                 <p>Top performers in ChemLab VR - Ranked by fastest completion time</p>
             </div>
 
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by player name or class...">
+            </div>
+
             <div class="leaderboard-table">
                 <table>
                     <thead>
@@ -43,30 +47,7 @@
                         </tr>
                     </thead>
                     <tbody id="leaderboard-body">
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-                         
-                        </tr>
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-                        
-                        </tr>
-                        <tr>
-
-                        </tr>
+  
                     </tbody>
                 </table>
             </div>
@@ -77,5 +58,23 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById('search-input').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#leaderboard-body tr');
+            
+            rows.forEach(row => {
+                const playerName = row.cells[1].textContent.toLowerCase();
+                const className = row.cells[2].textContent.toLowerCase();
+                
+                if (playerName.includes(searchTerm) || className.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
