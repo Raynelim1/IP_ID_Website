@@ -46,6 +46,16 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
 section {
     display: none;
 }
