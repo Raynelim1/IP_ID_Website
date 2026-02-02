@@ -45,7 +45,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid #6b8a8b;
+    border-bottom: 3px solid #6b8a8b;
     box-shadow: 0 2px 10px rgba(122, 158, 159, 0.3);
     border-radius: 0 0 15px 15px;
 }
@@ -83,20 +83,6 @@ nav a:hover {
     box-shadow: 0 2px 4px rgba(122, 158, 159, 0.2);
 }
 
-section {
-    display: none;
-}
-
-section.active {
-    display: block;
-}
-
-.section-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -126,7 +112,7 @@ footer {
     margin-top: 4rem;
 }
 
-/* Leaderboard Section Styles */
+/* Home Section Styles */
 .hero {
     background: #ffffff;
     padding: 3rem 2rem;
@@ -177,69 +163,47 @@ footer {
     z-index: 2;
 }
 
-.search-container {
-    margin: 2rem 0;
-    text-align: center;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
 }
 
-#search-input {
-    padding: 0.8rem;
-    width: 100%;
-    max-width: 400px;
-    border: 2px solid #c8d5d6;
-    font-size: 1rem;
-    border-radius: 25px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-#search-input:focus {
-    border-color: #7a9e9f;
-    box-shadow: 0 0 0 3px rgba(122, 158, 159, 0.1);
-}
-
-.leaderboard-table {
+.stat-box {
     background: #ffffff;
-    overflow: hidden;
-    margin: 2rem 0;
+    padding: 2rem;
+    text-align: center;
     border: 2px solid #c8d5d6;
-    border-radius: 12px;
+    border-radius: 15px 25px 15px 25px;
     box-shadow: 0 4px 15px rgba(200, 213, 214, 0.3);
+    transition: transform 0.3s ease;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.stat-box:hover {
+    transform: translateY(-5px);
 }
 
-thead {
-    background: #7a9e9f;
-    color: #ffffff;
-}
-
-th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #c8d5d6;
-}
-
-tbody tr:hover {
-    background: #f0f4f8;
-}
-
-.time {
-    color: #7a9e9f;
+.stat-number {
+    font-size: 3rem;
     font-weight: bold;
+    color: #7a9e9f;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #6b7c7d;
 }
 
 .info-box {
     background: #ffffff;
     padding: 2rem;
-    margin: 2rem 0;
     border: 2px solid #c8d5d6;
     border-radius: 20px 40px 20px 40px;
     box-shadow: 0 6px 20px rgba(200, 213, 214, 0.4);
     position: relative;
+    margin: 2rem 0;
 }
 
 .info-box::before {
@@ -279,13 +243,5 @@ tbody tr:hover {
     nav a {
         margin-left: 1rem;
         font-size: 0.9rem;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 0.8rem;
     }
 }
