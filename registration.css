@@ -59,12 +59,12 @@ body::after {
     box-shadow: 0 6px 12px rgba(122, 158, 159, 0.4);
 }
 
-footer {
-    background: #7a9e9f;
-    color: #ffffff;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+.btn:disabled {
+    background: #c8d5d6;
+    border-color: #b0bfc0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 2px 4px rgba(200, 213, 214, 0.3);
 }
 
 /* Register Page Styles */
@@ -132,3 +132,18 @@ footer {
 .login-link a:hover {
     text-decoration: underline;
 }
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}</content>
+<parameter name="filePath">c:\Users\limwr\OneDrive\Desktop\NP\IP\ID\IP_ID_Website\registration.css

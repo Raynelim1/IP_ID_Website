@@ -132,3 +132,10 @@ footer {
 .register-link a:hover {
     text-decoration: underline;
 }
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
