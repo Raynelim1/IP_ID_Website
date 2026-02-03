@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #4a5d5e;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(122, 158, 159, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(200, 213, 214, 0.15);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #7a9e9f;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #6b8a8b;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(122, 158, 159, 0.3);
+}
+
+.btn:hover {
+    background: #6b8a8b;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(122, 158, 159, 0.4);
+}
+
+footer {
+    background: #7a9e9f;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Register Page Styles */
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.register-container {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 25px 15px 25px 15px;
+    box-shadow: 0 8px 25px rgba(200, 213, 214, 0.4);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #c8d5d6;
+}
+
+.register-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5d5e;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #c8d5d6;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #7a9e9f;
+    box-shadow: 0 0 0 3px rgba(122, 158, 159, 0.1);
+}
+
+.login-link {
+    margin-top: 1.5rem;
+    color: #6b7c7d;
+}
+
+.login-link a {
+    color: #7a9e9f;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
