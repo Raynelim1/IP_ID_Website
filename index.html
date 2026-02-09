@@ -14,18 +14,21 @@
             </div>
 
             <div class="login-form">
+                <div class="error-message" style="display: none; color: #e74c3c; margin-bottom: 15px;"></div>
+                <div class="success-message" style="display: none; color: #27ae60; margin-bottom: 15px;"></div>
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" placeholder="user@example.com" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button class="btn" id="login-btn">Login</button>
+                <button class="btn" type="button" id="login-btn">Login</button>
                 <p class="register-link">Don't have an account? <a href="registration.html">Register here</a></p>
             </div>
         </div>
     </section>
+    <script src="auth.js"></script>
 </body>
 </html>
