@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard - ChemLab VR</title>
+    <title>Leaderboard - Lab Breakout</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="logo">ChemLab VR</div>
+            <div class="logo">Lab Breakout</div>
             <nav>
                 <a href="home.html">Home</a>
-                <a href="Game.html">Game</a>
-                <a href="Leaderboard.html" style="text-decoration: underline;">Leaderboard</a>
-                <a href="Chemistry.html">Chemistry</a>
+                <a href="game.html">Game</a>
+                <a href="leaderboard.html" style="text-decoration: underline;">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
             </nav>
             <div class="auth-placeholder"></div>
         </div>
@@ -24,53 +24,44 @@
         <div class="section-container">
             <div class="hero">
                 <h1>Leaderboard</h1>
-                <p>Top performers in ChemLab VR - Ranked by fastest completion time</p>
+                <p>Top performers in Lab Breakout - Ranked by fastest completion time</p>
             </div>
 
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search by player name or class...">
+            <div class="leaderboard-controls">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="🔍 Search player name...">
+                </div>
+                <div class="level-filter">
+                    <label for="room-select">Filter by Level:</label>
+                    <select id="room-select">
+                        <option value="level3">❄️ Ice Melting</option>
+                        <option value="level4">⚗️ Acid Neutralization</option>
+                        <option value="level5">🔓 Lock Corrosion</option>
+                        <option value="level6">💡 Light Production</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="leaderboard-table">
-                <table>
+            <div class="leaderboard-wrapper">
+                <table class="leaderboard-table">
                     <thead>
                         <tr>
-                            <th>Rank</th>
-                            <th>Player Name</th>
-                            <th>Class</th>
-                            <th>Completion Time</th>
-                            <th>Date</th>
+                            <th class="rank">#</th>
+                            <th class="player">Player</th>
+                            <th class="level">Level</th>
+                            <th class="time">Best Time</th>
+                            <th class="grade">Grade</th>
                         </tr>
                     </thead>
                     <tbody id="leaderboard-body">
-  
+                        <tr><td colspan="5" style="text-align: center; padding: 2rem; color: #999;">Loading leaderboard...</td></tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="info-box">
-                <h3>Leaderboard Information</h3>
-                <p>The leaderboard shows the fastest times achieved by students in completing all four rooms of ChemLab VR. Players are ranked by their total completion time, with the fastest completion at the top. Times include all room puzzles but not time spent in menu screens.</p>
             </div>
         </div>
     </section>
 
-    <script>
-        document.getElementById('search-input').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const rows = document.querySelectorAll('#leaderboard-body tr');
-            
-            rows.forEach(row => {
-                const playerName = row.cells[1].textContent.toLowerCase();
-                const className = row.cells[2].textContent.toLowerCase();
-                
-                if (playerName.includes(searchTerm) || className.includes(searchTerm)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="leaderboard.js"></script>
 </body>
 </html>
