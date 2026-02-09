@@ -1,156 +1,147 @@
-// Validation functions
+// Import the connections from your firebase.js
+import { auth, db } from "./firebase.js"; 
+import { 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { 
+    ref, 
+    set 
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+// --- UI Helper Function ---
+function showStatus(message, isSuccess) {
+    const messageBox = document.getElementById('message-box');
+    if (messageBox) {
+        messageBox.textContent = message;
+        messageBox.style.display = 'block';
+        // Green for success (#28a745), Red for error (#dc3545)
+        messageBox.style.color = isSuccess ? "#28a745" : "#dc3545";
+    }
+}
+
+// --- Validation Functions ---
 function validateEmail(email) {
-  return email.includes('@') && email.includes('.com');
+    return email.includes('@') && email.includes('.com');
 }
 
 function validatePassword(password) {
-  return password.length >= 6 && /\d/.test(password);
+    return password.length >= 6 && /\d/.test(password);
 }
 
 function validateName(name) {
-  return name.length > 0 && /^[A-Z]/.test(name) && /^[a-zA-Z\s]+$/.test(name);
+    // Trim spaces and check if first character is A-Z
+    const cleanName = name.trim();
+    return cleanName.length > 0 && /^[A-Z]/.test(cleanName);
 }
 
-// Display message function
-function showMessage(selector, message) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.textContent = message;
-    element.style.display = 'block';
-  }
+// --- Registration Handler ---
+async function handleRegister(e) {
+    e.preventDefault();
+    
+    // Get values and trim them immediately
+    const name = document.getElementById('username')?.value?.trim() || '';
+    const email = document.getElementById('email')?.value?.trim() || '';
+    const password = document.getElementById('password')?.value || '';
+    const confirmPassword = document.getElementById('confirm-password')?.value || '';
+
+    // 1. Validation Checks
+    if (!name || !email || !password || !confirmPassword) {
+        showStatus('Please fill in all fields.', false);
+        return;
+    }
+
+    if (!validateName(name)) {
+        showStatus('Name must start with a capital letter (e.g., Raynelim).', false);
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        showStatus('Email must contain @ and .com', false);
+        return;
+    }
+
+    if (!validatePassword(password)) {
+        showStatus('Password: min 6 chars and 1 digit.', false);
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        showStatus('Passwords do not match.', false);
+        return;
+    }
+
+    // 2. Firebase Cloud Execution
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Save data to match your structure: players -> UID -> name & rooms
+        // 'createdAt' has been removed per your request.
+        await set(ref(db, 'players/' + user.uid), {
+            name: name,
+            email: email,
+            rooms: {
+                level3: { achievement: "", bestTime: 0 },
+                level4: { achievement: "", bestTime: 0 },
+                level5: { achievement: "", bestTime: 0 },
+                level6: { achievement: "", bestTime: 0 }
+            }
+        });
+
+        showStatus('Registration successful! Redirecting...', true);
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 2000);
+
+    } catch (error) {
+        console.error("Firebase Auth Error:", error.code);
+        showStatus('Error: ' + error.message, false);
+    }
 }
 
-function hideMessage(selector) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.style.display = 'none';
-  }
+// --- Login Handler ---
+async function handleLogin(e) {
+    e.preventDefault();
+    
+    // Ensure index.html inputs use id="email" and id="password"
+    const email = document.getElementById('email')?.value?.trim() || '';
+    const password = document.getElementById('password')?.value || '';
+
+    if (!email || !password) {
+        showStatus('Please enter email and password.', false);
+        return;
+    }
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        showStatus('Login successful! Welcome back.', true);
+        
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 1500);
+    } catch (error) {
+        showStatus('Login failed: ' + error.message, false);
+    }
 }
 
-// Registration handler
-function handleRegister(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('username')?.value?.trim() || '';
-  const email = document.getElementById('email')?.value?.trim() || '';
-  const password = document.getElementById('password')?.value || '';
-  const confirmPassword = document.getElementById('confirm-password')?.value || '';
-
-  // Clear previous messages
-  hideMessage('.error-message');
-  hideMessage('.success-message');
-
-  // Validation checks
-  if (!name || !email || !password || !confirmPassword) {
-    showMessage('.error-message', 'Please fill in all fields.');
-    return;
-  }
-
-  if (!validateName(name)) {
-    showMessage('.error-message', 'Name must start with a capital letter and contain only letters.');
-    return;
-  }
-
-  if (!validateEmail(email)) {
-    showMessage('.error-message', 'Email must contain @ and .com');
-    return;
-  }
-
-  if (!validatePassword(password)) {
-    showMessage('.error-message', 'Password must be at least 6 characters and include at least 1 digit.');
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    showMessage('.error-message', 'Passwords do not match.');
-    return;
-  }
-
-  // Check if user already exists
-  const existingUsers = JSON.parse(localStorage.getItem('users') || '{}');
-  if (existingUsers[email]) {
-    showMessage('.error-message', 'Email already registered.');
-    return;
-  }
-
-  // Register user
-  existingUsers[email] = {
-    name: name,
-    password: password,
-    createdAt: new Date().toISOString()
-  };
-  localStorage.setItem('users', JSON.stringify(existingUsers));
-
-  showMessage('.success-message', 'Registration successful! Redirecting to login...');
-  setTimeout(() => {
-    window.location.href = 'index.html';
-  }, 1500);
-}
-
-// Login handler
-function handleLogin(e) {
-  e.preventDefault();
-  
-  const email = document.getElementById('username')?.value?.trim() || '';
-  const password = document.getElementById('password')?.value || '';
-
-  // Clear previous messages
-  hideMessage('.error-message');
-  hideMessage('.success-message');
-
-  // Validation checks
-  if (!email || !password) {
-    showMessage('.error-message', 'Please enter email and password.');
-    return;
-  }
-
-  if (!validateEmail(email)) {
-    showMessage('.error-message', 'Email must contain @ and .com');
-    return;
-  }
-
-  if (!validatePassword(password)) {
-    showMessage('.error-message', 'Password must be at least 6 characters and include at least 1 digit.');
-    return;
-  }
-
-  // Check credentials
-  const existingUsers = JSON.parse(localStorage.getItem('users') || '{}');
-  
-  if (!existingUsers[email]) {
-    showMessage('.error-message', 'Email not found. Please register first.');
-    return;
-  }
-
-  if (existingUsers[email].password !== password) {
-    showMessage('.error-message', 'Incorrect password.');
-    return;
-  }
-
-  // Successful login
-  localStorage.setItem('currentUser', email);
-  showMessage('.success-message', 'Login successful! Redirecting...');
-  setTimeout(() => {
-    window.location.href = 'home.html';
-  }, 1500);
-}
-
-// Initialize event listeners
+// --- Initialization ---
 function init() {
-  const loginBtn = document.getElementById('login-btn');
-  if (loginBtn) {
-    loginBtn.addEventListener('click', handleLogin);
-  }
+    const loginBtn = document.getElementById('login-btn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', handleLogin);
+    }
 
-  const registerBtn = document.getElementById('registerBtn');
-  if (registerBtn) {
-    registerBtn.addEventListener('click', handleRegister);
-  }
+    const registerBtn = document.getElementById('registerBtn');
+    if (registerBtn) {
+        registerBtn.addEventListener('click', handleRegister);
+    }
 }
 
 // Run when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init);
 } else {
-  init();
+    init();
 }
