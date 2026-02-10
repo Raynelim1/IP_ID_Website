@@ -513,30 +513,19 @@ footer {
 }
 
 .leaderboard-table th {
-    padding: 1.5rem 1.5rem;
-    text-align: center;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 .leaderboard-table th.rank {
-    width: 70px;
-    text-align: center;
-}
-
-.leaderboard-table th.player {
-    text-align: left;
-}
-
-.leaderboard-table th.level {
-    width: 150px;
+    width: 60px;
     text-align: center;
 }
 
 .leaderboard-table th.time {
-    width: 140px;
-    text-align: center;
-    white-space: nowrap;
+    width: 120px;
 }
 
 .leaderboard-table th.grade {
@@ -545,15 +534,9 @@ footer {
 }
 
 .leaderboard-table td {
-    padding: 1.3rem 1.5rem;
-    border-bottom: 1px solid #e8eef0;
-    border-right: 1px solid #e8eef0;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #f0f4f8;
     color: var(--text);
-    text-align: center;
-}
-
-.leaderboard-table td:last-child {
-    border-right: none;
 }
 
 .leaderboard-table tbody tr {
@@ -575,21 +558,9 @@ footer {
     font-size: 1.1rem;
 }
 
-.leaderboard-table td:nth-child(2) {
-    text-align: left;
-    font-weight: 500;
-}
-
-.leaderboard-table td:nth-child(3) {
-    text-align: center;
-    font-size: 0.95rem;
-}
-
 .leaderboard-table td:nth-child(4) {
-    text-align: center;
     font-weight: 600;
     color: #7a9e9f;
-    white-space: nowrap;
 }
 
 .leaderboard-table td:nth-child(5) {

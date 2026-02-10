@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Lab Breakout</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="game.html">Game</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <img src="profile-icon.png" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </header>
+
+    <div class="section-container">
+        <div class="hero">
+            <h1>Personal Dashboard</h1>
+            <p>Review your personal stats and chemistry room achievements.</p>
+        </div>
+
+        <div class="profile-grid">
+            <aside class="info-box">
+                <div class="profile-header-meta">
+                    <img src="profile-icon.png" alt="User Avatar" class="large-avatar">
+                    <h2 id="display-name">Loading...</h2>
+                </div>
+                
+                <div class="account-details">
+                    <p><strong>Name:</strong> <span id="info-name">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="info-email">Loading...</span></p>
+                </div>
+
+                <button class="btn btn-danger-alt" id="logout-btn">Sign Out</button>
+            </aside>
+
+            <main>
+                <h2 style="margin-bottom: 1.5rem; color: var(--text);">My Best Times</h2>
+                
+                
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Ice Melting</div>
+                        <div class="stat-number" id="best-time-level3">--</div>
+                        <div class="grade-badge" id="grade-level3">Grade: -</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-label">Acid Neutralization</div>
+                        <div class="stat-number" id="best-time-level4">--</div>
+                        <div class="grade-badge" id="grade-level4">Grade: -</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-label">Lock Corrosion</div>
+                        <div class="stat-number" id="best-time-level5">--</div>
+                        <div class="grade-badge" id="grade-level5">Grade: -</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-label">Light Production</div>
+                        <div class="stat-number" id="best-time-level6">--</div>
+                        <div class="grade-badge" id="grade-level6">Grade: -</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Lab Breakout VR Project</p>
+    </footer>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
