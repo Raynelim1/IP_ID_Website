@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details - Lab Breakout</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="game.html">Game</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <div class="profile-cube-small"></div>
+            </a>
+        </div>
+    </header>
+
+    <div class="section-container">
+        <div class="hero">
+            <h1>Edit Profile Details</h1>
+            <p>Update your account information</p>
+        </div>
+
+        <div class="edit-details-container">
+            <div class="edit-details-card">
+                <div class="profile-picture-section">
+                    <div class="profile-cube"></div>
+                    <button type="button" class="change-picture-box">Change Profile Picture</button>
+                </div>
+
+                <form class="edit-form">
+                    <div class="form-group">
+                        <label for="edit-name">Display Name</label>
+                        <input type="text" id="edit-name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email Address</label>
+                        <input type="email" id="edit-email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-password">New Password</label>
+                        <input type="password" id="edit-password" placeholder="Leave blank to keep current">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-confirm-password">Confirm New Password</label>
+                        <input type="password" id="edit-confirm-password" placeholder="Confirm new password">
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <a href="profile.html" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.change-picture-box').addEventListener('click', function() {
+            alert('Profile picture changed!');
+        });
+    </script>
+</body>
+</html>

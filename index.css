@@ -511,8 +511,9 @@ footer {
     line-height: 1.8;
     border-bottom: 1px solid #e8eef0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .account-details p:last-child {
@@ -530,7 +531,7 @@ footer {
 .account-details span {
     color: var(--text);
     font-weight: 600;
-    text-align: right;
+    text-align: left;
     word-break: break-word;
 }
 
@@ -542,6 +543,98 @@ footer {
 
 .btn-danger-alt:hover {
     background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+}
+
+.btn-edit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, var(--primary-strong) 0%, #5a7a7b 100%);
+    transform: translateY(-1px);
+}
+
+/* Edit Details Page Styles */
+.edit-details-container {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.edit-details-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(200, 213, 214, 0.4);
+    border: 1px solid #e8eef0;
+}
+
+.profile-picture-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e8eef0;
+}
+
+.change-picture-box {
+    background: #f8fafb;
+    color: var(--text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 2px dashed #d5dfe1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.change-picture-box:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 158, 159, 0.3);
+}
+
+.edit-form {
+    margin-top: 2rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button-group .btn {
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-strong) 0%, #5a7a7b 100%);
+}
+
+.btn-secondary {
+    background: #e8eef0;
+    color: var(--text);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: #d5dfe1;
 }
 
 .info-box::before {
