@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Breakout - Navigate Through Chemistry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -24,36 +27,70 @@
 
     <section id="home" class="active">
         <div class="section-container">
-            <div class="hero">
-                <h1>Welcome to Lab Breakout</h1>
-                <p>Navigate through a virtual chemistry lab, solve puzzles using real chemical reactions, and unlock the secrets hidden in 4 challenging rooms.</p>
-                <button class="btn" onclick="window.location.href='game.html'">Start Exploring</button>
+            <div class="hero hero-home">
+                <div class="hero-badge">🔬 VR Chemistry Experience</div>
+                <h1>Master Chemistry Through<br><span class="gradient-text">Immersive Challenges</span></h1>
+                <p class="hero-subtitle">Navigate through a virtual chemistry lab, solve puzzles using real chemical reactions, and unlock the secrets hidden in 4 challenging rooms.</p>
+                <button class="btn btn-primary-large" onclick="window.location.href='game.html'">
+                    <span>Start Exploring</span>
+                    <span class="btn-arrow">→</span>
+                </button>
             </div>
 
-            <div class="stats">
-                <div class="stat-box">
+            <div class="stats stats-home">
+                <div class="stat-box stat-box-home">
+                    <div class="stat-icon">🧪</div>
                     <div class="stat-number">4</div>
-                    <div class="stat-label">Rooms to Explore</div>
+                    <div class="stat-label">Interactive Rooms</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box stat-box-home">
+                    <div class="stat-icon">⚛️</div>
                     <div class="stat-number">4</div>
                     <div class="stat-label">Chemistry Concepts</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box stat-box-home">
+                    <div class="stat-icon">📊</div>
                     <div class="stat-number">∞</div>
                     <div class="stat-label">Learning Opportunities</div>
                 </div>
             </div>
 
-            <div class="info-box">
-                <h3>How It Works</h3>
-                <p>Step into an immersive VR environment and use your knowledge of chemistry to escape four challenging rooms. Each room tests a different chemical concept:</p>
-                <ul>
-                    <li>Room 1: Ice Melting (Exothermic Reactions)</li>
-                    <li>Room 2: Acid Neutralization (pH Balancing)</li>
-                    <li>Room 3: Lock Corrosion (Redox Reactions)</li>
-                    <li>Room 4: Light Production (Photochemistry)</li>
-                </ul>
+            <div class="info-box info-box-home">
+                <div class="info-header">
+                    <h3>How It Works</h3>
+                    <div class="info-tag">Educational VR</div>
+                </div>
+                <p class="info-description">Step into an immersive VR environment and use your knowledge of chemistry to escape four challenging rooms. Each room tests a different chemical concept:</p>
+                <div class="room-list">
+                    <div class="room-item">
+                        <span class="room-number">01</span>
+                        <div class="room-details">
+                            <strong>Ice Melting</strong>
+                            <span class="room-concept">Exothermic Reactions</span>
+                        </div>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-number">02</span>
+                        <div class="room-details">
+                            <strong>Acid Neutralization</strong>
+                            <span class="room-concept">pH Balancing</span>
+                        </div>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-number">03</span>
+                        <div class="room-details">
+                            <strong>Lock Corrosion</strong>
+                            <span class="room-concept">Redox Reactions</span>
+                        </div>
+                    </div>
+                    <div class="room-item">
+                        <span class="room-number">04</span>
+                        <div class="room-details">
+                            <strong>Light Production</strong>
+                            <span class="room-concept">Photochemistry</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
