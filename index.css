@@ -440,6 +440,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 100%;
+    gap: 2rem;
 }
 
 /* Profile Grid Layout */
@@ -458,15 +459,17 @@ footer {
 
 .profile-header-meta {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     padding-bottom: 2rem;
-    border-bottom: 2px solid #f0f4f8;
+    border-bottom: 2px solid #e8eef0;
 }
 
 .profile-header-meta h2 {
     margin-top: 1.5rem;
     color: var(--text);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 /* Square Placeholder Styles */
@@ -493,25 +496,48 @@ footer {
 
 .account-details {
     text-align: left;
-    margin: 1.5rem 0;
+    margin: 0;
+    padding: 1.5rem;
+    background: #f8fafb;
+    border-radius: 12px;
+    border: 1px solid #e8eef0;
 }
 
 .account-details p {
-    margin: 1rem 0;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.6;
+    margin: 0;
+    padding: 1rem 0;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    border-bottom: 1px solid #e8eef0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-details p:last-child {
+    border-bottom: none;
 }
 
 .account-details strong {
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-details span {
     color: var(--text);
     font-weight: 600;
+    text-align: right;
+    word-break: break-word;
 }
 
 .btn-danger-alt {
     width: 100%;
     background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    margin-top: 1rem;
+    margin-top: auto;
 }
 
 .btn-danger-alt:hover {
