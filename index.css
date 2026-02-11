@@ -265,37 +265,116 @@ footer {
     z-index: 2;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.stat-box {
+.profile-main {
     background: #ffffff;
-    padding: 2rem;
-    text-align: center;
+    padding: 2.5rem;
     border: var(--panel-border);
-    border-radius: 15px 25px 15px 25px;
-    box-shadow: var(--soft-shadow);
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
 }
 
-.stat-box:hover {
-    transform: translateY(-5px);
+.section-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f4f8;
 }
 
-.stat-number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #7a9e9f;
+.section-header h2 {
+    color: var(--text);
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
+.section-subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Home page stats - 3 column layout */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Profile page stats - 2 column layout */
+.profile-main .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .stats,
+    .profile-main .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-box {
+    background: #fafbfc;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid #e8eef0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(200, 213, 214, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-main .stat-box {
+    min-height: 180px;
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(122, 158, 159, 0.25);
+    border-color: var(--primary);
+    background: #ffffff;
+}
+
 .stat-label {
-    font-size: 1.1rem;
-    color: #6b7c7d;
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.profile-main .stat-label {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.profile-main .stat-number {
+    margin: 0.5rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.grade-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(122, 158, 159, 0.3);
 }
 
 .info-box {
@@ -306,6 +385,88 @@ footer {
     box-shadow: var(--card-shadow);
     position: relative;
     margin: 2rem 0;
+}
+
+.profile-grid .info-box {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Profile Grid Layout */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+@media (max-width: 968px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profile-header-meta {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+.profile-header-meta h2 {
+    margin-top: 1.5rem;
+    color: var(--text);
+    font-size: 1.8rem;
+}
+
+/* Square Placeholder Styles */
+.profile-cube {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+    border: 3px solid var(--primary-strong);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(122, 158, 159, 0.3);
+}
+
+/* Small square for header */
+.profile-cube-small {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-details {
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+.account-details p {
+    margin: 1rem 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.account-details strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.btn-danger-alt {
+    width: 100%;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    margin-top: 1rem;
+}
+
+.btn-danger-alt:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
 }
 
 .info-box::before {
