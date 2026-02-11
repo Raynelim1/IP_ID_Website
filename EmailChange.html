@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Change Request - Lab Breakout</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="section-container">
+        <div class="email-change-container">
+            <div class="email-change-card">
+                <div class="checkmark-box">✓</div>
+                <h1>An email reset request has been sent!</h1>
+                <p class="email-change-text">An email reset request has been sent to your registered email. Please follow the instructions to reset your email.</p>
+                
+                <div id="error-message" class="error-message"></div>
+                <div id="success-message" class="success-message"></div>
+                
+                <div class="button-group-vertical">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='profile.html'">Done</button>
+                    <button type="button" class="btn btn-resend" id="resend-email-btn">Resend Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="EmailChange.js"></script>
+</body>
+</html>
