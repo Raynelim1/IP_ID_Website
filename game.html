@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game - Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -25,52 +28,70 @@
 
 <section id="game" class="active">
         <div class="section-container">
-            <div class="hero">
-                <h1>The Game</h1>
-                <p>Master chemistry in an interactive virtual environment</p>
+            <div class="hero hero-game">
+                <div class="hero-badge">🎮 Interactive Learning</div>
+                <h1>Master Chemistry Through<br><span class="gradient-text">4 Challenging Puzzles</span></h1>
+                <p class="hero-subtitle">Navigate through four interconnected rooms in a chemistry lab, each presenting a unique challenge based on real chemical principles. Solve puzzles using your knowledge of chemistry to escape!</p>
             </div>
 
-            <div class="info-box">
-                <h3>Game Overview</h3>
-                <p>Lab Breakout is an educational game designed for secondary school students studying chemistry. Navigate through four interconnected rooms in a chemistry lab, each presenting a unique challenge based on real chemical principles.</p>
+            <div class="info-box info-box-game">
+                <div class="info-header">
+                    <h3>Game Overview</h3>
+                </div>
+                <p>Lab Breakout is an educational game designed for secondary school students studying chemistry. Apply real-world chemical principles to solve complex puzzles and unlock the secrets of each room.</p>
             </div>
 
-            <h2 style="color: black; margin: 2rem 0;">The 4 Rooms</h2>
-            <div class="room-cards">
-                <div class="card">
-                    <h3>Room 1: Ice Melting</h3>
-                    <p>Learn about exothermic reactions by selecting appropriate chemicals to generate heat and melt the ice block protecting the key.</p>
-                    <div class="difficulty">Difficulty:  Beginner</div>
-                    <p style="margin-top: 1rem; color: black; font-size: 0.9rem;">Concept: Exothermic Reactions and Thermochemistry</p>
-                </div>
+            <div class="game-rooms-section">
+                <h2 class="section-title">The 4 Rooms</h2>
+                <div class="room-cards">
+                    <div class="card card-game">
+                        <div class="card-header">
+                            <div class="room-badge">01</div>
+                            <span class="difficulty-badge beginner">Beginner</span>
+                        </div>
+                        <h3>Ice Melting</h3>
+                        <p class="card-description">Learn about exothermic reactions by selecting appropriate chemicals to generate heat and melt the ice block protecting the key.</p>
+                        <p class="card-concept">⚛️ Exothermic Reactions & Thermochemistry</p>
+                    </div>
 
-                <div class="card">
-                    <h3>Room 2: Acid Neutralization</h3>
-                    <p>Neutralize acidic floor conditions by calculating and mixing the correct base solution. Find the optimal pH balance to safely retrieve the key.</p>
-                    <div class="difficulty">Difficulty:  Intermediate</div>
-                    <p style="margin-top: 1rem; color: black; font-size: 0.9rem;">Concept: Acid-Base Reactions and pH</p>
-                </div>
+                    <div class="card card-game">
+                        <div class="card-header">
+                            <div class="room-badge">02</div>
+                            <span class="difficulty-badge intermediate">Intermediate</span>
+                        </div>
+                        <h3>Acid Neutralization</h3>
+                        <p class="card-description">Neutralize acidic floor conditions by calculating and mixing the correct base solution. Find the optimal pH balance to safely retrieve the key.</p>
+                        <p class="card-concept">🧪 Acid-Base Reactions & pH Balancing</p>
+                    </div>
 
-                <div class="card">
-                    <h3>Room 3: Lock Corrosion</h3>
-                    <p>Perform a redox reaction to corrode the lock mechanism. Choose the right combination of oxidizing and reducing agents.</p>
-                    <div class="difficulty">Difficulty  :Advanced</div>
-                    <p style="margin-top: 1rem; color: black; font-size: 0.9rem;">Concept: Redox Reactions and Electrochemistry</p>
-                </div>
+                    <div class="card card-game">
+                        <div class="card-header">
+                            <div class="room-badge">03</div>
+                            <span class="difficulty-badge advanced">Advanced</span>
+                        </div>
+                        <h3>Lock Corrosion</h3>
+                        <p class="card-description">Perform a redox reaction to corrode the lock mechanism. Choose the right combination of oxidizing and reducing agents.</p>
+                        <p class="card-concept">⚡ Redox Reactions & Electrochemistry</p>
+                    </div>
 
-                <div class="card">
-                    <h3>Room 4: Light Production</h3>
-                    <p>Create chemiluminescence to light up the dark room. Combine reactants to produce visible light and navigate to the final key.</p>
-                    <div class="difficulty">Difficulty:  Expert</div>
-                    <p style="margin-top: 1rem; color: black; font-size: 0.9rem;">Concept: Chemiluminescence and Light Emission</p>
+                    <div class="card card-game">
+                        <div class="card-header">
+                            <div class="room-badge">04</div>
+                            <span class="difficulty-badge expert">Expert</span>
+                        </div>
+                        <h3>Light Production</h3>
+                        <p class="card-description">Create chemiluminescence to light up the dark room. Combine reactants to produce visible light and navigate to the final key.</p>
+                        <p class="card-concept">💡 Chemiluminescence & Light Emission</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="info-box">
-                <h3>Learning Objectives</h3>
+            <div class="info-box info-box-game">
+                <div class="info-header">
+                    <h3>Learning Objectives</h3>
+                </div>
                 <p>By completing Lab Breakout, students will:</p>
-                <ul>
-
+                <ul class="objectives-list">
                     <li>Understand and apply exothermic reaction principles</li>
                     <li>Master pH scales and acid-base neutralization</li>
                     <li>Learn oxidation and reduction reactions</li>
@@ -80,9 +101,11 @@
                 </ul>
             </div>
 
-            <div class="info-box">
-                <h3>Scoring and Time Tracking</h3>
-                <p>Your performance is tracked by the time taken to complete all four rooms. The faster you solve the puzzles using correct chemistry, the better your score. Check the leaderboard to see how you rank among your peers!</p>
+            <div class="info-box info-box-game">
+                <div class="info-header">
+                    <h3>Scoring and Progress</h3>
+                </div>
+                <p>Your performance is tracked by the time taken to complete all four rooms. The faster you solve the puzzles using correct chemistry principles, the better your score. Check the leaderboard to see how you rank among your peers and compete globally!</p>
             </div>
         </div>
     </section>

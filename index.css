@@ -1076,47 +1076,159 @@ footer {
 }
 
 /* Game Section Styles */
-.room-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.hero-game {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border: 2px solid #e0e8ea;
+    padding: 4rem 2rem;
+}
+
+.hero-game h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.game-rooms-section {
+    margin: 3rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.info-box-game {
+    background: #ffffff;
+    border: 2px solid #e0e8ea;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 2px 12px rgba(200, 213, 214, 0.15);
     margin: 2rem 0;
 }
 
-.card {
+.info-box-game .info-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.info-box-game p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.objectives-list {
+    margin-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.objectives-list li {
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.room-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0;
+}
+
+.card-game {
     background: #ffffff;
     padding: 2rem;
-    border: var(--panel-border);
-    border-radius: 15px;
-    box-shadow: var(--soft-shadow);
+    border: 2px solid #e0e8ea;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(200, 213, 214, 0.15);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
 }
 
-.card:nth-child(odd) {
-    border-radius: 20px 40px 20px 40px;
+.card-game:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(122, 158, 159, 0.2);
+    border-color: var(--primary);
 }
 
-.card:nth-child(even) {
-    border-radius: 40px 20px 40px 20px;
-    transform: rotate(-1deg);
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: var(--card-hover-shadow);
+.room-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.difficulty-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.difficulty-badge.beginner {
+    background: #d4edda;
+    color: #155724;
+}
+
+.difficulty-badge.intermediate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.difficulty-badge.advanced {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.difficulty-badge.expert {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.card-game h3 {
+    color: var(--text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.card-description {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-concept {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .card::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    width: 40px;
-    height: 40px;
-    background: rgba(122, 158, 159, 0.1);
-    border-radius: 50%;
+    display: none;
 }
 
 .card h3 {
@@ -1409,6 +1521,10 @@ footer {
     .btn {
         padding: 0.9rem 2rem;
         font-size: 0.95rem;
+    }
+
+    .room-cards {
+        grid-template-columns: 1fr;
     }
 }
 
