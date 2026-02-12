@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard - Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -25,17 +28,20 @@
 
     <section id="leaderboard" class="active">
         <div class="section-container">
-            <div class="hero">
-                <h1>Leaderboard</h1>
-                <p>Top performers in Lab Breakout - Ranked by fastest completion time</p>
+            <div class="hero hero-leaderboard">
+                <div class="hero-badge">🏆 Global Rankings</div>
+                <h1>Compete With
+<br><span class="gradient-text">The Best Chemists</span></h1>
+                <p class="hero-subtitle">Track your performance and compare with top players worldwide. See how you rank based on fastest completion times!</p>
             </div>
 
             <div class="leaderboard-controls">
                 <div class="search-box">
-                    <input type="text" id="search-input" placeholder="🔍 Search player name...">
+                    <label class="filter-label">🔍 Search Player</label>
+                    <input type="text" id="search-input" placeholder="Enter player name...">
                 </div>
                 <div class="level-filter">
-                    <label for="room-select">Filter by Level:</label>
+                    <label for="room-select" class="filter-label">Filter by Room</label>
                     <select id="room-select">
                         <option value="level3">❄️ Ice Melting</option>
                         <option value="level4">⚗️ Acid Neutralization</option>
@@ -49,10 +55,10 @@
                 <table class="leaderboard-table">
                     <thead>
                         <tr>
-                            <th class="rank">#</th>
+                            <th class="rank">Rank</th>
                             <th class="player">Player</th>
-                            <th class="level">Level</th>
-                            <th class="time">Best Time</th>
+                            <th class="level">Room</th>
+                            <th class="time">Time</th>
                             <th class="grade">Grade</th>
                         </tr>
                     </thead>

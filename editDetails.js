@@ -41,10 +41,30 @@ function clearError() {
     errorDiv.style.display = 'none';
 }
 
+// Helper function to show success messages
+function showSuccess(message) {
+    const successDiv = document.getElementById('name-success-message');
+    successDiv.innerHTML = '<span class="checkmark-inline">✓</span> ' + message;
+    successDiv.style.display = 'block';
+    successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
+    // Hide message after 3 seconds
+    setTimeout(() => {
+        successDiv.style.display = 'none';
+    }, 3000);
+}
+
+function clearSuccess() {
+    const successDiv = document.getElementById('name-success-message');
+    successDiv.textContent = '';
+    successDiv.style.display = 'none';
+}
+
 // Handle form submission
 document.querySelector('.edit-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     clearError();
+    clearSuccess();
 
     if (!currentUser) {
         showError('You must be logged in to update your profile.');
@@ -64,8 +84,7 @@ document.querySelector('.edit-form').addEventListener('submit', async (e) => {
         }
 
         if (changesMade) {
-            alert('Profile updated successfully!');
-            window.location.href = 'profile.html';
+            showSuccess('Name changed successfully!');
         } else {
             showError('No changes were made.');
         }

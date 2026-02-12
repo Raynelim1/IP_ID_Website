@@ -168,6 +168,7 @@ section.active { display: block; }
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(122, 158, 159, 0.3);
     letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn:hover {
@@ -405,20 +406,24 @@ footer {
     color: var(--text);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .section-subtitle {
     color: var(--muted);
     font-size: 0.95rem;
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Home page stats - 3 column layout */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: 2rem;
+    margin: 3rem 0 2rem 0;
 }
 
 .stats-home {
@@ -505,7 +510,7 @@ footer {
 
 .stat-box {
     background: #fafbfc;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     border: 2px solid #e8eef0;
     border-radius: 12px;
@@ -518,7 +523,7 @@ footer {
 }
 
 .profile-main .stat-box {
-    min-height: 180px;
+    min-height: 150px;
 }
 
 .stat-box:hover {
@@ -529,20 +534,21 @@ footer {
 }
 
 .stat-label {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text);
     font-weight: 600;
     letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .profile-main .stat-label {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--primary);
     line-height: 1;
@@ -550,7 +556,8 @@ footer {
 
 .profile-main .stat-number {
     margin: 0.5rem 0;
-    font-family: 'Courier New', monospace;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
 }
 
 .grade-badge {
@@ -564,16 +571,37 @@ footer {
     font-weight: 600;
     letter-spacing: 0.3px;
     box-shadow: 0 2px 8px rgba(122, 158, 159, 0.3);
+    font-family: 'Inter', sans-serif;
 }
 
 .info-box {
     background: #ffffff;
     padding: 2rem;
-    border: var(--panel-border);
-    border-radius: 20px 40px 20px 40px;
-    box-shadow: var(--card-shadow);
+    border: 2px solid #e0e8ea;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     position: relative;
     margin: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    box-shadow: 0 8px 24px rgba(122, 158, 159, 0.15);
+    border-color: var(--primary);
+}
+
+.info-box h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.info-box p, .info-box ul {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
 }
 
 .profile-grid .info-box {
@@ -588,8 +616,9 @@ footer {
 .profile-grid {
     display: grid;
     grid-template-columns: 350px 1fr;
-    gap: 2rem;
+    gap: 3rem;
     align-items: stretch;
+    margin-top: 3rem;
 }
 
 @media (max-width: 968px) {
@@ -610,7 +639,8 @@ footer {
     color: var(--text);
     font-size: 1.6rem;
     font-weight: 700;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Square Placeholder Styles */
@@ -655,6 +685,7 @@ footer {
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .account-details p:last-child {
@@ -663,10 +694,11 @@ footer {
 
 .account-details strong {
     color: var(--muted);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .account-details span {
@@ -674,6 +706,7 @@ footer {
     font-weight: 600;
     text-align: left;
     word-break: break-word;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn-danger-alt {
@@ -1055,7 +1088,7 @@ footer {
 /* Chemistry Section Styles */
 .concept-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -1063,16 +1096,52 @@ footer {
 .concept-card {
     background: #ffffff;
     padding: 2rem;
-    border: var(--panel-border);
-    border-radius: 15px 25px 15px 25px;
-    box-shadow: var(--soft-shadow);
+    border: 2px solid #e0e8ea;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(122, 158, 159, 0.15);
+    border-color: var(--primary);
+}
+
+.concept-number {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .concept-card h4 {
-    color: #4a5d5e;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.concept-room {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--primary-strong);
+    font-weight: 600;
     margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
 }
 
 /* Game Section Styles */
@@ -1260,11 +1329,64 @@ footer {
 }
 
 /* Leaderboard Section Styles */
+.hero-leaderboard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border: 2px solid #e0e8ea;
+    padding: 4rem 2rem;
+}
+
+.hero-leaderboard h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Chemistry Hero Section */
+.hero-chemistry {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border: 2px solid #e0e8ea;
+    padding: 4rem 2rem;
+}
+
+.hero-chemistry h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Profile Hero Section */
+.hero-profile {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border: 2px solid #e0e8ea;
+    padding: 4rem 2rem;
+}
+
+.hero-profile h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.filter-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    display: block;
+    letter-spacing: 0.3px;
+}
+
 .leaderboard-controls {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    margin: 2rem 0 3rem;
+    gap: 2rem;
+    margin: 3rem 0;
     align-items: end;
 }
 
@@ -1274,12 +1396,13 @@ footer {
 }
 
 .search-box input {
-    padding: 0.9rem 1.2rem;
-    border: 2px solid #e0e8e9;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e8ea;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     background: #ffffff;
+    font-family: 'Inter', sans-serif;
 }
 
 .search-box input:focus {
@@ -1296,19 +1419,20 @@ footer {
 .level-filter label {
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text);
 }
 
 .level-filter select {
-    padding: 0.9rem 1.2rem;
-    border: 2px solid #e0e8e9;
-    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e8ea;
+    border-radius: 12px;
     font-size: 1rem;
     background: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
     color: var(--text);
+    font-family: 'Inter', sans-serif;
 }
 
 .level-filter select:hover {
@@ -1323,10 +1447,10 @@ footer {
 
 .leaderboard-wrapper {
     background: #ffffff;
-    border-radius: 15px;
-    box-shadow: var(--soft-shadow);
-    border: 1px solid #e0e8e9;
-    max-height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(200, 213, 214, 0.15);
+    border: 2px solid #e0e8ea;
+    max-height: 600px;
     overflow-y: auto;
     position: relative;
 }
@@ -1363,10 +1487,12 @@ footer {
 }
 
 .leaderboard-table th {
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 1rem;
     text-align: left;
     font-weight: 600;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-size: 0.85rem;
 }
 
 .leaderboard-table th.rank {
@@ -1376,6 +1502,7 @@ footer {
 
 .leaderboard-table th.time {
     width: 120px;
+    text-align: center;
 }
 
 .leaderboard-table th.grade {
@@ -1384,9 +1511,10 @@ footer {
 }
 
 .leaderboard-table td {
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 1rem;
     border-bottom: 1px solid #f0f4f8;
     color: var(--text);
+    font-weight: 500;
 }
 
 .leaderboard-table tbody tr {
@@ -1402,15 +1530,19 @@ footer {
 }
 
 .leaderboard-table td:first-child {
-    text-align: center;
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
     color: var(--primary);
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .leaderboard-table td:nth-child(4) {
+    font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
-    color: #7a9e9f;
+    color: var(--text);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .leaderboard-table td:nth-child(5) {
@@ -1500,7 +1632,11 @@ footer {
 
     .leaderboard-controls {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .hero-leaderboard h1 {
+        font-size: 2rem;
     }
 
     .leaderboard-table thead th {
@@ -1524,6 +1660,10 @@ footer {
     }
 
     .room-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .concept-grid {
         grid-template-columns: 1fr;
     }
 }
