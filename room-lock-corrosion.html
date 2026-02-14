@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 3 - Lock Corrosion | Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-rust-room">
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle" style="text-decoration: underline;">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <div class="profile-cube-small"></div>
+            </a>
+        </div>
+    </header>
+
+    <section class="active">
+        <div class="section-container">
+            <div class="hero hero-game">
+                <div class="hero-badge">Room 03 • Advanced</div>
+                <h1><span class="gradient-text">Lock Corrosion</span></h1>
+                <p class="hero-subtitle">Use redox chemistry to weaken and corrode the lock mechanism without damaging nearby components.</p>
+            </div>
+
+            <div class="room-detail-grid">
+                <article class="room-detail-panel">
+                    <h3>In-Depth Room Explanation</h3>
+                    <p>This room tests oxidation-reduction logic. You must select reagents that transfer electrons effectively to corrode the lock at the right rate.</p>
+                    <ul class="objectives-list">
+                        <li>Match oxidizing and reducing agents correctly</li>
+                        <li>Apply reaction in phases to avoid over-corrosion penalties</li>
+                        <li>Observe lock state changes after each reaction step</li>
+                    </ul>
+                    <p><strong>Clear strategy:</strong> Prime the lock surface first, then run the main redox step. Trigger the unlock action immediately when corrosion reaches threshold.</p>
+                </article>
+
+                <article class="room-detail-panel">
+                    <h3>Video Tutorial: How to Clear Room 3</h3>
+                    <video class="tutorial-video" controls preload="metadata">
+                        <source src="videos/room3-lock-corrosion-tutorial.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="tutorial-note">Add your walkthrough file to <strong>videos/room3-lock-corrosion-tutorial.mp4</strong> to replace this placeholder.</p>
+                </article>
+            </div>
+
+            <div class="info-box info-box-game">
+                <div class="info-header"><h3>Common Mistakes</h3></div>
+                <ul class="objectives-list">
+                    <li>Using incompatible agents that stall corrosion</li>
+                    <li>Repeating one reaction step instead of sequencing correctly</li>
+                    <li>Delaying key pickup after unlock and losing time</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lab Breakout VR Project</p>
+    </footer>
+</body>
+</html>

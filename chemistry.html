@@ -15,7 +15,15 @@
             <div class="logo">Lab Breakout</div>
             <nav>
                 <a href="home.html">Home</a>
-                <a href="game.html">Game</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
                 <a href="leaderboard.html">Leaderboard</a>
                 <a href="chemistry.html" style="text-decoration: underline;">Chemistry</a>
             </nav>
@@ -35,37 +43,37 @@
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <a class="concept-card room-theme-ice" href="room-ice-melting.html">
                     <div class="concept-number">01</div>
                     <h4>Exothermic Reactions</h4>
                     <p class="concept-room">🧊 Used in Room 1: Ice Melting</p>
                     <p>Exothermic reactions release energy in the form of heat. Examples include combustion, neutralization, and rusting. In the game, you combine chemicals that react exothermically to generate enough heat to melt the ice and retrieve the key.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: black;">Real Example: Burning magnesium ribbon or calcium oxide reacting with water.</p>
-                </div>
+                    <p class="concept-example">Real Example: Burning magnesium ribbon or calcium oxide reacting with water.</p>
+                </a>
 
-                <div class="concept-card">
+                <a class="concept-card room-theme-acid" href="room-acid-neutralization.html">
                     <div class="concept-number">02</div>
                     <h4>Acid-Base Neutralization</h4>
                     <p class="concept-room">🧪 Used in Room 2: Acid Neutralization</p>
                     <p>Neutralization occurs when an acid and base react to form a salt and water. The pH scale measures acidity (0-7) or alkalinity (7-14), with 7 being neutral. You must balance the pH to make the floor safe to traverse.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: black;">Equation: Acid + Base = Salt + Water</p>
-                </div>
+                    <p class="concept-example">Equation: Acid + Base = Salt + Water</p>
+                </a>
 
-                <div class="concept-card">
+                <a class="concept-card room-theme-rust" href="room-lock-corrosion.html">
                     <div class="concept-number">03</div>
                     <h4>Redox Reactions</h4>
                     <p class="concept-room">🔐 Used in Room 3: Lock Corrosion</p>
                     <p>Redox (reduction-oxidation) reactions involve the transfer of electrons between substances. Oxidation is the loss of electrons, while reduction is the gain of electrons. These reactions can produce corrosion of metals.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: black;">Real Example: Iron rusting in the presence of oxygen.</p>
-                </div>
+                    <p class="concept-example">Real Example: Iron rusting in the presence of oxygen.</p>
+                </a>
 
-                <div class="concept-card">
+                <a class="concept-card room-theme-light" href="room-light-production.html">
                     <div class="concept-number">04</div>
                     <h4>Chemiluminescence</h4>
                     <p class="concept-room">💡 Used in Room 4: Light Production</p>
                     <p>Chemiluminescence is the emission of light as a result of a chemical reaction. Unlike fluorescence, it doesn't require external light. Specific chemical combinations produce visible light without significant heat.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: black;">Real Example: Glow sticks and bioluminescence in fireflies.</p>
-                </div>
+                    <p class="concept-example">Real Example: Glow sticks and bioluminescence in fireflies.</p>
+                </a>
             </div>
 
             <div class="info-box">

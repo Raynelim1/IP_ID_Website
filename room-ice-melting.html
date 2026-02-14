@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 1 - Ice Melting | Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-ice-room">
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle" style="text-decoration: underline;">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <div class="profile-cube-small"></div>
+            </a>
+        </div>
+    </header>
+
+    <section class="active">
+        <div class="section-container">
+            <div class="hero hero-game">
+                <div class="hero-badge">Room 01 • Beginner</div>
+                <h1><span class="gradient-text">Ice Melting</span></h1>
+                <p class="hero-subtitle">Generate enough heat with the correct exothermic reaction to melt the ice block and recover the key.</p>
+            </div>
+
+            <div class="room-detail-grid">
+                <article class="room-detail-panel">
+                    <h3>In-Depth Room Explanation</h3>
+                    <p>This room introduces exothermic reactions. You must identify reagents that release heat quickly but safely. The puzzle tests reaction selection and sequence, not random mixing.</p>
+                    <ul class="objectives-list">
+                        <li>Identify which chemicals are heat-producing when combined</li>
+                        <li>Estimate whether the reaction output is enough to melt the ice</li>
+                        <li>Avoid low-energy combinations that waste time</li>
+                    </ul>
+                    <p><strong>Clear strategy:</strong> Start with the strongest safe exothermic pair, then monitor the ice change indicator before making a second mix.</p>
+                </article>
+
+                <article class="room-detail-panel">
+                    <h3>Video Tutorial: How to Clear Room 1</h3>
+                    <video class="tutorial-video" controls preload="metadata">
+                        <source src="videos/room1-ice-melting-tutorial.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="tutorial-note">Add your walkthrough file to <strong>videos/room1-ice-melting-tutorial.mp4</strong> to replace this placeholder.</p>
+                </article>
+            </div>
+
+            <div class="info-box info-box-game">
+                <div class="info-header"><h3>Common Mistakes</h3></div>
+                <ul class="objectives-list">
+                    <li>Mixing chemicals too quickly without checking reaction feedback</li>
+                    <li>Choosing neutral combinations that produce little heat</li>
+                    <li>Ignoring available clues that indicate the correct reagent family</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lab Breakout VR Project</p>
+    </footer>
+</body>
+</html>

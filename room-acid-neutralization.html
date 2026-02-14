@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 2 - Acid Neutralization | Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-acid-room">
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle" style="text-decoration: underline;">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <div class="profile-cube-small"></div>
+            </a>
+        </div>
+    </header>
+
+    <section class="active">
+        <div class="section-container">
+            <div class="hero hero-game">
+                <div class="hero-badge">Room 02 • Intermediate</div>
+                <h1><span class="gradient-text">Acid Neutralization</span></h1>
+                <p class="hero-subtitle">Balance pH to make the floor safe, then move to the key route before the hazard resets.</p>
+            </div>
+
+            <div class="room-detail-grid">
+                <article class="room-detail-panel">
+                    <h3>In-Depth Room Explanation</h3>
+                    <p>This room focuses on acid-base reactions. You need to select a base concentration that neutralizes the acidic zone without overshooting into strongly alkaline conditions.</p>
+                    <ul class="objectives-list">
+                        <li>Read pH indicators correctly before mixing</li>
+                        <li>Use neutralization logic to target near pH 7</li>
+                        <li>Apply the solution in the right order across floor zones</li>
+                    </ul>
+                    <p><strong>Clear strategy:</strong> Neutralize the closest zone first, confirm color or meter change, then chain your path toward the key in one clean route.</p>
+                </article>
+
+                <article class="room-detail-panel">
+                    <h3>Video Tutorial: How to Clear Room 2</h3>
+                    <video class="tutorial-video" controls preload="metadata">
+                        <source src="videos/room2-acid-neutralization-tutorial.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="tutorial-note">Add your walkthrough file to <strong>videos/room2-acid-neutralization-tutorial.mp4</strong> to replace this placeholder.</p>
+                </article>
+            </div>
+
+            <div class="info-box info-box-game">
+                <div class="info-header"><h3>Common Mistakes</h3></div>
+                <ul class="objectives-list">
+                    <li>Over-neutralizing and making a zone unsafe again</li>
+                    <li>Ignoring concentration labels before pouring</li>
+                    <li>Taking an inefficient route that re-exposes you to acid tiles</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lab Breakout VR Project</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 4 - Light Production | Lab Breakout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-light-room">
+    <header>
+        <div class="header-content">
+            <div class="logo">Lab Breakout</div>
+            <nav>
+                <a href="home.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle" style="text-decoration: underline;">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="chemistry.html">Chemistry</a>
+            </nav>
+            <a href="profile.html" class="profile-link">
+                <div class="profile-cube-small"></div>
+            </a>
+        </div>
+    </header>
+
+    <section class="active">
+        <div class="section-container">
+            <div class="hero hero-game">
+                <div class="hero-badge">Room 04 • Expert</div>
+                <h1><span class="gradient-text">Light Production</span></h1>
+                <p class="hero-subtitle">Create stable chemiluminescence to illuminate the room and reveal the final key path.</p>
+            </div>
+
+            <div class="room-detail-grid">
+                <article class="room-detail-panel">
+                    <h3>In-Depth Room Explanation</h3>
+                    <p>The final room combines timing and chemistry. You need the right reactants and sequence to produce enough light duration for navigation and key collection.</p>
+                    <ul class="objectives-list">
+                        <li>Select reactants that produce visible chemiluminescence</li>
+                        <li>Control activation order to maximize glow duration</li>
+                        <li>Move through the room while light intensity is at peak</li>
+                    </ul>
+                    <p><strong>Clear strategy:</strong> Prepare all components first, trigger luminescence once, and complete movement in a single route before brightness drops.</p>
+                </article>
+
+                <article class="room-detail-panel">
+                    <h3>Video Tutorial: How to Clear Room 4</h3>
+                    <video class="tutorial-video" controls preload="metadata">
+                        <source src="videos/room4-light-production-tutorial.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="tutorial-note">Add your walkthrough file to <strong>videos/room4-light-production-tutorial.mp4</strong> to replace this placeholder.</p>
+                </article>
+            </div>
+
+            <div class="info-box info-box-game">
+                <div class="info-header"><h3>Common Mistakes</h3></div>
+                <ul class="objectives-list">
+                    <li>Activating the glow before path planning is complete</li>
+                    <li>Using the wrong mix ratio and getting weak illumination</li>
+                    <li>Stopping mid-route and wasting the active light window</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lab Breakout VR Project</p>
+    </footer>
+</body>
+</html>

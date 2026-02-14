@@ -15,7 +15,15 @@
             <div class="logo">Lab Breakout</div>
             <nav>
                 <a href="home.html" style="text-decoration: underline;">Home</a>
-                <a href="game.html">Game</a>
+                <div class="nav-dropdown">
+                    <a href="game.html" class="nav-dropdown-toggle">Game</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="room-ice-melting.html">Room 1: Ice Melting</a>
+                        <a href="room-acid-neutralization.html">Room 2: Acid Neutralization</a>
+                        <a href="room-lock-corrosion.html">Room 3: Lock Corrosion</a>
+                        <a href="room-light-production.html">Room 4: Light Production</a>
+                    </div>
+                </div>
                 <a href="leaderboard.html">Leaderboard</a>
                 <a href="chemistry.html">Chemistry</a>
             </nav>
@@ -62,34 +70,34 @@
                 </div>
                 <p class="info-description">Step into an immersive VR environment and use your knowledge of chemistry to escape four challenging rooms. Each room tests a different chemical concept:</p>
                 <div class="room-list">
-                    <div class="room-item">
+                    <a class="room-item room-theme-ice" href="room-ice-melting.html">
                         <span class="room-number">01</span>
                         <div class="room-details">
                             <strong>Ice Melting</strong>
                             <span class="room-concept">Exothermic Reactions</span>
                         </div>
-                    </div>
-                    <div class="room-item">
+                    </a>
+                    <a class="room-item room-theme-acid" href="room-acid-neutralization.html">
                         <span class="room-number">02</span>
                         <div class="room-details">
                             <strong>Acid Neutralization</strong>
                             <span class="room-concept">pH Balancing</span>
                         </div>
-                    </div>
-                    <div class="room-item">
+                    </a>
+                    <a class="room-item room-theme-rust" href="room-lock-corrosion.html">
                         <span class="room-number">03</span>
                         <div class="room-details">
                             <strong>Lock Corrosion</strong>
                             <span class="room-concept">Redox Reactions</span>
                         </div>
-                    </div>
-                    <div class="room-item">
+                    </a>
+                    <a class="room-item room-theme-light" href="room-light-production.html">
                         <span class="room-number">04</span>
                         <div class="room-details">
                             <strong>Light Production</strong>
                             <span class="room-concept">Photochemistry</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

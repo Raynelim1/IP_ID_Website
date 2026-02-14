@@ -5,15 +5,15 @@
 }
 
 :root {
-    --bg: #f0f4f8;
-    --text: #4a5d5e;
-    --muted: #6b7c7d;
-    --primary: #7a9e9f;
-    --primary-strong: #6b8a8b;
-    --panel-border: 2px solid #c8d5d6;
-    --card-shadow: 0 8px 25px rgba(200, 213, 214, 0.4);
-    --soft-shadow: 0 4px 15px rgba(200, 213, 214, 0.3);
-    --card-hover-shadow: 0 12px 30px rgba(200, 213, 214, 0.5);
+    --bg: #e6edf2;
+    --text: #3f5253;
+    --muted: #5f7071;
+    --primary: #6e9495;
+    --primary-strong: #5f8485;
+    --panel-border: 2px solid #b8c8c9;
+    --card-shadow: 0 8px 25px rgba(176, 193, 194, 0.45);
+    --soft-shadow: 0 4px 15px rgba(176, 193, 194, 0.35);
+    --card-hover-shadow: 0 12px 30px rgba(176, 193, 194, 0.55);
     --card-radius: 25px 15px 25px 15px;
 }
 
@@ -34,7 +34,7 @@ body::before {
     right: -50px;
     width: 200px;
     height: 200px;
-    background: rgba(122, 158, 159, 0.1);
+    background: rgba(110, 148, 149, 0.14);
     border-radius: 50%;
     z-index: -1;
 }
@@ -46,7 +46,7 @@ body::after {
     left: -100px;
     width: 300px;
     height: 300px;
-    background: rgba(200, 213, 214, 0.15);
+    background: rgba(176, 193, 194, 0.2);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     z-index: -1;
 }
@@ -117,6 +117,79 @@ nav a[style*="underline"] {
 
 nav a[style*="underline"]:hover {
     background: var(--primary-strong);
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-dropdown-toggle::after {
+    content: '▾';
+    font-size: 0.8rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.2rem);
+    left: 0;
+    min-width: 250px;
+    background: #ffffff;
+    border: 1px solid #e0e8ea;
+    border-radius: 12px;
+    box-shadow: 0 14px 28px rgba(74, 93, 94, 0.14);
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 200;
+}
+
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    height: 10px;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle::after,
+.nav-dropdown:focus-within .nav-dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav-dropdown-menu a:hover {
+    background: #f5f8f9;
+    color: var(--primary-strong);
+    transform: translateX(2px);
 }
 
 .profile-link {
@@ -1049,6 +1122,60 @@ footer {
     box-shadow: 0 4px 15px rgba(122, 158, 159, 0.1);
 }
 
+a.room-item {
+    text-decoration: none;
+}
+
+.room-item.room-theme-ice {
+    background: linear-gradient(135deg, #f8fcff 0%, #eaf6ff 100%);
+    border-color: #cfe3f5;
+    box-shadow: 0 6px 16px rgba(179, 214, 240, 0.2);
+}
+
+.room-item.room-theme-ice:hover {
+    border-color: #9fc6e3;
+    box-shadow: 0 10px 24px rgba(160, 204, 236, 0.28);
+}
+
+.room-item.room-theme-acid {
+    background: linear-gradient(135deg, #fcffe9 0%, #f2fdd2 100%);
+    border-color: #d3e6a8;
+    box-shadow: 0 6px 16px rgba(180, 210, 105, 0.2);
+}
+
+.room-item.room-theme-acid:hover {
+    border-color: #aacb58;
+    box-shadow: 0 10px 24px rgba(165, 200, 75, 0.3);
+}
+
+.room-item.room-theme-rust {
+    background: linear-gradient(135deg, #fff5ef 0%, #ffe4d7 100%);
+    border-color: #e4baa9;
+    box-shadow: 0 6px 16px rgba(197, 132, 108, 0.2);
+}
+
+.room-item.room-theme-rust:hover {
+    border-color: #c8896f;
+    box-shadow: 0 10px 24px rgba(184, 114, 87, 0.3);
+}
+
+.room-item.room-theme-light {
+    background: linear-gradient(135deg, #c9e2f3 0%, #adcee5 100%);
+    border-color: #f2df94;
+    box-shadow: 0 0 0 1px rgba(245, 226, 150, 0.65), 0 8px 18px rgba(224, 198, 108, 0.35);
+}
+
+.room-item.room-theme-light .room-number,
+.room-item.room-theme-light .room-details strong,
+.room-item.room-theme-light .room-concept {
+    color: #1f3648;
+}
+
+.room-item.room-theme-light:hover {
+    border-color: #f0d574;
+    box-shadow: 0 0 0 1px rgba(247, 224, 125, 0.72), 0 12px 24px rgba(218, 187, 83, 0.42);
+}
+
 .room-number {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.8rem;
@@ -1106,6 +1233,10 @@ footer {
     min-height: 320px;
 }
 
+a.concept-card {
+    text-decoration: none;
+}
+
 .concept-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(122, 158, 159, 0.15);
@@ -1136,12 +1267,23 @@ footer {
     letter-spacing: -0.5px;
 }
 
+.concept-card p {
+    color: var(--muted);
+}
+
 .concept-room {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
     color: var(--primary-strong);
     font-weight: 600;
     margin-bottom: 1rem;
+}
+
+.concept-example {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
 }
 
 /* Game Section Styles */
@@ -1230,6 +1372,118 @@ footer {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(122, 158, 159, 0.2);
     border-color: var(--primary);
+}
+
+a.card-game {
+    text-decoration: none;
+}
+
+.card-game.room-theme-ice {
+    background: linear-gradient(135deg, #f9fdff 0%, #ebf7ff 100%);
+    border-color: #cae2f4;
+    box-shadow: 0 10px 24px rgba(177, 213, 240, 0.24);
+}
+
+.concept-card.room-theme-ice {
+    background: linear-gradient(135deg, #f9fdff 0%, #ebf7ff 100%);
+    border-color: #cae2f4;
+    box-shadow: 0 10px 24px rgba(177, 213, 240, 0.24);
+}
+
+.concept-card.room-theme-ice .concept-number,
+.card-game.room-theme-ice .room-badge {
+    color: #4f86af;
+}
+
+.concept-card.room-theme-ice .concept-number {
+    background: linear-gradient(135deg, #8ebfdf 0%, #6ea3ca 100%);
+}
+
+.card-game.room-theme-acid {
+    background: linear-gradient(135deg, #fdffe9 0%, #f4fdd8 100%);
+    border-color: #cfe29d;
+    box-shadow: 0 10px 24px rgba(177, 205, 98, 0.24);
+}
+
+.concept-card.room-theme-acid {
+    background: linear-gradient(135deg, #fdffe9 0%, #f4fdd8 100%);
+    border-color: #cfe29d;
+    box-shadow: 0 10px 24px rgba(177, 205, 98, 0.24);
+}
+
+.concept-card.room-theme-acid .concept-number,
+.card-game.room-theme-acid .room-badge {
+    color: #678b2d;
+}
+
+.concept-card.room-theme-acid .concept-number {
+    background: linear-gradient(135deg, #9cc45a 0%, #7da647 100%);
+}
+
+.card-game.room-theme-rust {
+    background: linear-gradient(135deg, #fff4ed 0%, #ffe2d4 100%);
+    border-color: #deb3a3;
+    box-shadow: 0 10px 24px rgba(193, 126, 102, 0.24);
+}
+
+.concept-card.room-theme-rust {
+    background: linear-gradient(135deg, #fff4ed 0%, #ffe2d4 100%);
+    border-color: #deb3a3;
+    box-shadow: 0 10px 24px rgba(193, 126, 102, 0.24);
+}
+
+.concept-card.room-theme-rust .concept-number,
+.card-game.room-theme-rust .room-badge {
+    color: #8d4f38;
+}
+
+.concept-card.room-theme-rust .concept-number {
+    background: linear-gradient(135deg, #be7a5d 0%, #9d5d45 100%);
+}
+
+.card-game.room-theme-light {
+    background: linear-gradient(135deg, #c6e0f3 0%, #a8cbe3 100%);
+    border-color: #f2df94;
+    box-shadow: 0 0 0 1px rgba(245, 226, 150, 0.65), 0 12px 26px rgba(224, 198, 108, 0.38);
+}
+
+.concept-card.room-theme-light {
+    background: linear-gradient(135deg, #c6e0f3 0%, #a8cbe3 100%);
+    border-color: #f2df94;
+    box-shadow: 0 0 0 1px rgba(245, 226, 150, 0.65), 0 12px 26px rgba(224, 198, 108, 0.38);
+}
+
+.concept-card.room-theme-light .concept-number,
+.card-game.room-theme-light .room-badge {
+    color: #1f4a68;
+}
+
+.concept-card.room-theme-light .concept-number {
+    background: linear-gradient(135deg, #7da9c8 0%, #5f89a8 100%);
+}
+
+.card-game.room-theme-light h3,
+.card-game.room-theme-light .card-description,
+.card-game.room-theme-light .card-concept,
+.card-game.room-theme-light .room-badge {
+    color: #1d3446;
+}
+
+.concept-card.room-theme-light h4,
+.concept-card.room-theme-light p,
+.concept-card.room-theme-light .concept-room,
+.concept-card.room-theme-light .concept-number {
+    color: #1d3446;
+}
+
+.card-game.room-theme-light:hover {
+    border-color: #f0d574;
+    box-shadow: 0 0 0 1px rgba(247, 224, 125, 0.75), 0 14px 28px rgba(218, 187, 83, 0.44);
+}
+
+.concept-card.room-theme-light:hover {
+    border-color: #f0d574;
+    box-shadow: 0 0 0 1px rgba(247, 224, 125, 0.75), 0 14px 28px rgba(218, 187, 83, 0.44);
 }
 
 .card-header {
@@ -1356,6 +1610,620 @@ footer {
     margin-bottom: 1.5rem;
     font-weight: 700;
     letter-spacing: -1px;
+}
+
+.room-detail-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.room-detail-panel {
+    background: #ffffff;
+    border: 2px solid #e0e8ea;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(200, 213, 214, 0.15);
+}
+
+.room-detail-panel h3 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.room-detail-panel p,
+.room-detail-panel li {
+    color: var(--muted);
+}
+
+.tutorial-video {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #e8eef0;
+    background: #000;
+    margin-bottom: 1rem;
+}
+
+.tutorial-note {
+    font-size: 0.92rem;
+    color: var(--muted);
+}
+
+/* Room detail themes */
+.theme-ice-room {
+    background: radial-gradient(circle at 12% 12%, rgba(181, 214, 241, 0.42), transparent 30%),
+                radial-gradient(circle at 88% 18%, rgba(210, 232, 250, 0.4), transparent 28%),
+                radial-gradient(circle at 18% 86%, rgba(203, 231, 250, 0.3), transparent 26%),
+                radial-gradient(circle at 84% 84%, rgba(186, 220, 245, 0.26), transparent 24%),
+                repeating-linear-gradient(115deg, rgba(221, 241, 255, 0.18) 0 2px, transparent 2px 18px),
+                repeating-linear-gradient(-35deg, rgba(205, 230, 249, 0.12) 0 2px, transparent 2px 20px),
+                var(--bg);
+}
+
+.theme-ice-room::before {
+    content: '❄  ❅  ✶  ❄  ❅  ✶  ❄';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 75px;
+    font-size: 1.65rem;
+    letter-spacing: 1.35rem;
+    color: rgba(124, 181, 222, 0.56);
+    text-shadow: 0 0 10px rgba(213, 241, 255, 0.82), 0 0 18px rgba(176, 223, 248, 0.6);
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+    animation: blizzardDrift 6.2s linear infinite;
+}
+
+.theme-ice-room .section-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-ice-room .section-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 8% 18%, rgba(214, 237, 255, 0.55) 0 12%, transparent 30%),
+        radial-gradient(circle at 92% 24%, rgba(198, 229, 252, 0.45) 0 10%, transparent 26%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0 2px, transparent 2px 14px);
+    opacity: 0.65;
+    z-index: 0;
+    animation: frostGlow 6s ease-in-out infinite;
+}
+
+.theme-ice-room .section-container::after {
+    content: '❄   ❅   ❄   ❅   ❄   ❅';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 0.35rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgba(94, 156, 202, 0.72);
+    text-shadow: 0 0 10px rgba(196, 232, 255, 0.78), 0 0 18px rgba(163, 214, 246, 0.58);
+    letter-spacing: 1.55rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    animation: blizzardDrift 7s linear infinite;
+}
+
+.theme-ice-room .section-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.theme-ice-room .hero.hero-game {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #eaf5ff 48%, #dff0ff 100%);
+    border-color: #bfdaf2;
+    box-shadow: 0 0 0 1px rgba(177, 215, 243, 0.75), 0 16px 34px rgba(141, 191, 228, 0.34);
+}
+
+.theme-ice-room .hero.hero-game::before {
+    background:
+        radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.85) 0 8%, transparent 24%),
+        radial-gradient(circle at 78% 26%, rgba(233, 247, 255, 0.75) 0 7%, transparent 22%),
+        radial-gradient(circle at 55% 74%, rgba(219, 240, 255, 0.65) 0 10%, transparent 24%);
+    opacity: 0.7;
+}
+
+.theme-ice-room .hero.hero-game::after {
+    content: '❄   ❅   ❄';
+    position: absolute;
+    right: 1.5rem;
+    top: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    color: rgba(95, 158, 205, 0.82);
+    text-shadow: 0 0 8px rgba(219, 244, 255, 0.8), 0 0 14px rgba(166, 216, 247, 0.65);
+    animation: snowDrift 5.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.theme-ice-room .hero.hero-game .hero-badge {
+    position: relative;
+    box-shadow: 0 0 14px rgba(178, 222, 249, 0.6);
+}
+
+.theme-ice-room .hero.hero-game .hero-badge::before {
+    content: '❄  ❅  ❄';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -1.1rem;
+    font-size: 1rem;
+    letter-spacing: 0.6rem;
+    color: rgba(117, 171, 211, 0.72);
+    text-shadow: 0 0 8px rgba(214, 243, 255, 0.8);
+    animation: snowDrift 4.3s ease-in-out infinite;
+}
+
+.theme-ice-room .room-detail-panel,
+.theme-ice-room .info-box-game {
+    background: linear-gradient(135deg, #ffffff 0%, #f4faff 100%);
+    border-color: #cce2f5;
+    box-shadow: 0 12px 28px rgba(170, 207, 237, 0.36), inset 0 0 0 1px rgba(201, 228, 247, 0.75);
+}
+
+.theme-ice-room .room-detail-panel {
+    backdrop-filter: blur(1.5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-ice-room .room-detail-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px 12px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.theme-ice-room .room-detail-panel::after {
+    content: '❅   ❄   ❅   ❄';
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.7rem;
+    color: rgba(130, 184, 222, 0.52);
+    text-shadow: 0 0 8px rgba(208, 239, 255, 0.7);
+    pointer-events: none;
+    animation: snowDrift 5s ease-in-out infinite;
+}
+
+.theme-ice-room .hero-badge {
+    background: linear-gradient(135deg, #77afd9 0%, #5f96c4 100%);
+}
+
+.theme-ice-room .tutorial-video {
+    border-color: #b8d7ef;
+}
+
+.theme-acid-room {
+    background: radial-gradient(circle at 14% 14%, rgba(208, 232, 139, 0.34), transparent 30%),
+                radial-gradient(circle at 86% 20%, rgba(226, 245, 173, 0.34), transparent 28%),
+                radial-gradient(circle at 20% 84%, rgba(186, 219, 92, 0.24), transparent 24%),
+                repeating-radial-gradient(circle at 0 0, rgba(190, 224, 98, 0.08) 0 8px, transparent 8px 24px),
+                var(--bg);
+}
+
+.theme-acid-room .section-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-acid-room .section-container::before,
+.theme-acid-room .section-container::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.theme-acid-room .section-container::before {
+    width: 220px;
+    height: 220px;
+    left: -30px;
+    bottom: 40px;
+    background: radial-gradient(circle, rgba(176, 216, 90, 0.38) 0 18%, rgba(160, 205, 73, 0.28) 28%, transparent 62%);
+    animation: bubbleRise 3.6s ease-in-out infinite;
+}
+
+.theme-acid-room .section-container::after {
+    width: 180px;
+    height: 180px;
+    right: -20px;
+    top: 110px;
+    background: radial-gradient(circle, rgba(199, 229, 120, 0.36) 0 16%, rgba(171, 210, 79, 0.26) 30%, transparent 64%);
+    animation: bubbleRise 3.2s ease-in-out infinite reverse;
+}
+
+.theme-acid-room .section-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.theme-acid-room .hero.hero-game {
+    background: linear-gradient(135deg, #ffffff 0%, #f4ffd9 50%, #ebfac5 100%);
+    border-color: #cde29a;
+    box-shadow: 0 0 0 1px rgba(198, 224, 126, 0.72), 0 16px 34px rgba(159, 192, 74, 0.3);
+}
+
+.theme-acid-room .hero.hero-game {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-acid-room .hero.hero-game::before {
+    background:
+        radial-gradient(circle at 14% 28%, rgba(228, 248, 165, 0.72) 0 11%, transparent 24%),
+        radial-gradient(circle at 66% 24%, rgba(208, 236, 121, 0.58) 0 9%, transparent 22%),
+        radial-gradient(circle at 84% 72%, rgba(190, 222, 96, 0.45) 0 10%, transparent 24%);
+    opacity: 0.72;
+}
+
+.theme-acid-room .hero.hero-game::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 22px;
+    background: repeating-radial-gradient(circle at 12px -4px, rgba(148, 188, 58, 0.5) 0 8px, transparent 9px 24px);
+    opacity: 0.75;
+    animation: acidPulse 3.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.theme-acid-room .hero.hero-game .hero-badge {
+    position: relative;
+    isolation: isolate;
+}
+
+.theme-acid-room .hero.hero-game .hero-badge::after {
+    content: '';
+    position: absolute;
+    inset: -16px -22px;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 12% 55%, rgba(170, 208, 79, 0.42) 0 9%, transparent 16%),
+        radial-gradient(circle at 34% 35%, rgba(201, 232, 115, 0.36) 0 7%, transparent 13%),
+        radial-gradient(circle at 58% 62%, rgba(156, 196, 64, 0.34) 0 8%, transparent 14%),
+        radial-gradient(circle at 82% 40%, rgba(188, 220, 96, 0.36) 0 7%, transparent 13%);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: -1;
+    animation: bubbleJitter 2.6s ease-in-out infinite;
+}
+
+.theme-acid-room .room-detail-panel,
+.theme-acid-room .info-box-game {
+    background: linear-gradient(135deg, #ffffff 0%, #fbffe9 100%);
+    border-color: #d1e3a7;
+    box-shadow: 0 10px 26px rgba(177, 205, 101, 0.28);
+}
+
+.theme-acid-room .room-detail-panel {
+    box-shadow: 0 10px 26px rgba(177, 205, 101, 0.28), inset 0 0 0 1px rgba(172, 208, 84, 0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-acid-room .room-detail-panel::before {
+    content: '';
+    position: absolute;
+    inset: -20% -10% auto -10%;
+    height: 80px;
+    background: radial-gradient(circle at 10% 60%, rgba(167, 209, 67, 0.28) 0 12%, transparent 20%),
+                radial-gradient(circle at 35% 40%, rgba(186, 221, 96, 0.24) 0 10%, transparent 18%),
+                radial-gradient(circle at 70% 50%, rgba(158, 196, 60, 0.24) 0 11%, transparent 20%),
+                radial-gradient(circle at 90% 45%, rgba(199, 231, 112, 0.22) 0 9%, transparent 18%);
+    opacity: 0.85;
+    pointer-events: none;
+    animation: bubbleJitter 3.2s ease-in-out infinite;
+}
+
+.theme-acid-room .room-detail-panel::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    bottom: -10px;
+    width: 180px;
+    height: 120px;
+    background:
+        radial-gradient(circle at 12% 58%, rgba(171, 212, 77, 0.34) 0 10%, transparent 17%),
+        radial-gradient(circle at 30% 42%, rgba(196, 228, 104, 0.32) 0 8%, transparent 14%),
+        radial-gradient(circle at 52% 64%, rgba(161, 201, 68, 0.3) 0 9%, transparent 15%),
+        radial-gradient(circle at 76% 46%, rgba(186, 221, 96, 0.3) 0 8%, transparent 14%),
+        radial-gradient(circle at 92% 60%, rgba(170, 208, 79, 0.28) 0 7%, transparent 13%);
+    opacity: 0.85;
+    pointer-events: none;
+    animation: bubbleCluster 3.8s ease-in-out infinite;
+}
+
+.theme-acid-room .hero-badge {
+    background: linear-gradient(135deg, #8eb24e 0%, #75983f 100%);
+}
+
+.theme-acid-room .tutorial-video {
+    border-color: #c9dd92;
+}
+
+.theme-rust-room {
+    background: radial-gradient(circle at 15% 13%, rgba(231, 174, 148, 0.34), transparent 30%),
+                radial-gradient(circle at 87% 16%, rgba(221, 153, 120, 0.3), transparent 28%),
+                radial-gradient(circle at 18% 88%, rgba(183, 110, 78, 0.22), transparent 24%),
+                repeating-linear-gradient(35deg, rgba(168, 100, 72, 0.1) 0 2px, transparent 2px 12px),
+                var(--bg);
+}
+
+.theme-rust-room .section-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-rust-room .section-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 14% 22%, rgba(141, 80, 56, 0.18) 0 12%, transparent 18%),
+        radial-gradient(circle at 18% 26%, rgba(196, 134, 109, 0.2) 0 4%, transparent 6%),
+        radial-gradient(circle at 84% 70%, rgba(130, 73, 50, 0.17) 0 11%, transparent 17%),
+        radial-gradient(circle at 81% 67%, rgba(206, 143, 117, 0.2) 0 4%, transparent 6%),
+        repeating-linear-gradient(25deg, rgba(173, 103, 75, 0.1) 0 2px, transparent 2px 12px);
+}
+
+.theme-rust-room .section-container::after {
+    content: '⚙️   🔒   ⚙️   🔩';
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    font-size: 2.2rem;
+    letter-spacing: 1rem;
+    opacity: 0.26;
+    pointer-events: none;
+    z-index: 0;
+    animation: gearDrift 7s linear infinite;
+}
+
+.theme-rust-room .section-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.theme-rust-room .hero.hero-game {
+    background: linear-gradient(135deg, #ffffff 0%, #ffebe2 48%, #ffd9cb 100%);
+    border-color: #dcac97;
+    box-shadow: 0 0 0 1px rgba(212, 151, 127, 0.7), 0 16px 34px rgba(173, 101, 75, 0.32);
+}
+
+.theme-rust-room .hero.hero-game::before {
+    background:
+        repeating-linear-gradient(25deg, rgba(159, 95, 67, 0.16) 0 2px, transparent 2px 13px),
+        radial-gradient(circle at 18% 70%, rgba(181, 110, 80, 0.3) 0 12%, transparent 26%),
+        radial-gradient(circle at 86% 22%, rgba(205, 136, 108, 0.26) 0 10%, transparent 24%);
+    opacity: 0.65;
+}
+
+.theme-rust-room .hero.hero-game::after {
+    content: '🔒  ⚙️  🔩';
+    position: absolute;
+    left: 1.3rem;
+    top: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.7rem;
+    opacity: 0.35;
+    animation: rustFloat 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.theme-rust-room .room-detail-panel,
+.theme-rust-room .info-box-game {
+    background: linear-gradient(135deg, #ffffff 0%, #fff4ee 100%);
+    border-color: #dfb3a3;
+    box-shadow: 0 10px 26px rgba(198, 122, 94, 0.28);
+}
+
+.theme-rust-room .room-detail-panel {
+    box-shadow: 0 10px 26px rgba(198, 122, 94, 0.28), inset 0 0 0 1px rgba(158, 92, 66, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-rust-room .room-detail-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(133, 75, 50, 0.16) 0 7%, transparent 10%),
+        radial-gradient(circle at 88% 30%, rgba(176, 104, 74, 0.14) 0 6%, transparent 9%),
+        repeating-linear-gradient(20deg, rgba(170, 100, 71, 0.1) 0 1px, transparent 1px 8px);
+    opacity: 0.8;
+    pointer-events: none;
+    animation: rustPulse 5s ease-in-out infinite;
+}
+
+.theme-rust-room .hero-badge {
+    background: linear-gradient(135deg, #ac6a4f 0%, #91533d 100%);
+}
+
+.theme-rust-room .tutorial-video {
+    border-color: #d8ab9a;
+}
+
+.theme-light-room {
+    background: radial-gradient(circle at 15% 10%, rgba(111, 163, 206, 0.18), transparent 30%),
+                radial-gradient(circle at 85% 20%, rgba(139, 185, 223, 0.18), transparent 28%),
+                #1e2529;
+    color: #dfeef8;
+}
+
+.theme-light-room header {
+    background: #273138;
+    border-bottom-color: #36434b;
+    box-shadow: 0 4px 14px rgba(6, 12, 16, 0.35);
+}
+
+.theme-light-room .logo,
+.theme-light-room nav a,
+.theme-light-room .hero h1,
+.theme-light-room .section-title,
+.theme-light-room .room-detail-panel h3,
+.theme-light-room .info-box-game .info-header h3 {
+    color: #e7f4ff;
+}
+
+.theme-light-room .nav-dropdown-menu {
+    background: #ffffff;
+    border-color: #d3e3ef;
+    box-shadow: 0 12px 28px rgba(8, 16, 22, 0.38);
+}
+
+.theme-light-room .nav-dropdown-menu a {
+    color: #2d4456;
+    font-weight: 600;
+}
+
+.theme-light-room .nav-dropdown-menu a:hover {
+    background: #eaf4fb;
+    color: #1b3242;
+}
+
+.theme-light-room nav a:hover {
+    background: rgba(111, 163, 206, 0.22);
+    color: #ffffff;
+}
+
+.theme-light-room nav a[style*="underline"] {
+    background: linear-gradient(135deg, #6f95b3 0%, #567991 100%);
+}
+
+.theme-light-room .hero.hero-game {
+    background: linear-gradient(135deg, #2b363d 0%, #263036 100%);
+    border-color: #f2df94;
+    box-shadow: 0 0 0 1px rgba(245, 226, 150, 0.72), 0 0 24px rgba(239, 214, 122, 0.34), 0 10px 28px rgba(8, 16, 22, 0.45);
+}
+
+.theme-light-room .hero-subtitle,
+.theme-light-room .room-detail-panel p,
+.theme-light-room .room-detail-panel li,
+.theme-light-room .info-box-game p,
+.theme-light-room .tutorial-note,
+.theme-light-room footer p {
+    color: #d9ecfa;
+}
+
+.theme-light-room .room-detail-panel p,
+.theme-light-room .room-detail-panel li,
+.theme-light-room .info-box-game p,
+.theme-light-room .tutorial-note {
+    font-weight: 500;
+}
+
+.theme-light-room .info-box-game .objectives-list li {
+    color: #eff8ff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+}
+
+.theme-light-room .gradient-text {
+    background: linear-gradient(135deg, #c7e7ff 0%, #92cfff 50%, #74b8ec 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-light-room .hero-badge {
+    background: linear-gradient(135deg, #7fb4de 0%, #5a91bd 100%);
+    box-shadow: 0 0 14px rgba(138, 190, 231, 0.45);
+}
+
+.theme-light-room .room-detail-panel,
+.theme-light-room .info-box-game {
+    background: linear-gradient(135deg, #2a343b 0%, #253036 100%);
+    border-color: #f2df94;
+    box-shadow: 0 0 0 1px rgba(245, 226, 150, 0.7), 0 0 18px rgba(239, 214, 122, 0.35), 0 12px 30px rgba(9, 17, 23, 0.4);
+}
+
+.theme-light-room .tutorial-video {
+    border-color: #84b8df;
+    box-shadow: 0 0 18px rgba(127, 180, 222, 0.35);
+}
+
+.theme-light-room footer {
+    background: #273138;
+}
+
+@keyframes frostGlow {
+    0%,
+    100% { opacity: 0.35; }
+    50% { opacity: 0.55; }
+}
+
+@keyframes snowDrift {
+    0%,
+    100% { transform: translateY(0) translateX(0); opacity: 0.45; }
+    50% { transform: translateY(5px) translateX(-5px); opacity: 0.75; }
+}
+
+@keyframes blizzardDrift {
+    0% { transform: translateX(0); opacity: 0.35; }
+    50% { transform: translateX(14px); opacity: 0.65; }
+    100% { transform: translateX(0); opacity: 0.35; }
+}
+
+@keyframes bubbleRise {
+    0%,
+    100% { transform: translateY(0) scale(1); opacity: 0.75; }
+    50% { transform: translateY(-18px) scale(1.08); opacity: 0.45; }
+}
+
+@keyframes acidPulse {
+    0%,
+    100% { transform: scaleY(1); opacity: 0.65; }
+    50% { transform: scaleY(1.18); opacity: 0.95; }
+}
+
+@keyframes bubbleJitter {
+    0%,
+    100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.04); }
+}
+
+@keyframes bubbleCluster {
+    0%,
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-8px) translateX(-3px) scale(1.06); opacity: 1; }
+}
+
+@keyframes gearDrift {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(-10px) rotate(-8deg); }
+}
+
+@keyframes rustFloat {
+    0%,
+    100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(2px) rotate(-2deg); }
+}
+
+@keyframes rustPulse {
+    0%,
+    100% { opacity: 0.62; }
+    50% { opacity: 0.9; }
 }
 
 /* Profile Hero Section */
@@ -1634,6 +2502,12 @@ footer {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
+    .nav-dropdown-menu {
+        left: auto;
+        right: 0;
+        min-width: 200px;
+    }
     
     .hero-leaderboard h1 {
         font-size: 2rem;
@@ -1664,6 +2538,10 @@ footer {
     }
 
     .concept-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-detail-grid {
         grid-template-columns: 1fr;
     }
 }
