@@ -167,19 +167,50 @@ function isPasswordResetPage() {
     return title.includes('password');
 }
 
+function initProfileThemeToggle() {
+    const toggleInput = document.getElementById('theme-toggle');
+    const modeLabel = document.getElementById('theme-mode-label');
+
+    if (!toggleInput) return;
+
+    const storageKey = 'site-theme-mode';
+    const savedMode = localStorage.getItem(storageKey);
+
+    function applyTheme(mode) {
+        const isDark = mode === 'dark';
+        document.body.classList.toggle('dark-mode', isDark);
+        toggleInput.checked = isDark;
+
+        if (modeLabel) {
+            modeLabel.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+        }
+    }
+
+    applyTheme(savedMode === 'dark' ? 'dark' : 'light');
+
+    toggleInput.addEventListener('change', () => {
+        const mode = toggleInput.checked ? 'dark' : 'light';
+        localStorage.setItem(storageKey, mode);
+        applyTheme(mode);
+    });
+}
+
 function initProfilePage() {
     const logoutBtn = document.getElementById('logout-btn');
-    if (!logoutBtn) return;
 
-    logoutBtn.addEventListener('click', () => {
-        signOut(auth)
-            .then(() => {
-                window.location.href = 'index.html';
-            })
-            .catch((error) => {
-                console.error('Sign Out Error:', error);
-            });
-    });
+    initProfileThemeToggle();
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            signOut(auth)
+                .then(() => {
+                    window.location.href = 'index.html';
+                })
+                .catch((error) => {
+                    console.error('Sign Out Error:', error);
+                });
+        });
+    }
 }
 
 function initEditDetailsPage() {

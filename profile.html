@@ -52,6 +52,17 @@
                     <p><strong>Email:</strong> <span id="info-email">Loading...</span></p>
                 </div>
 
+                <div class="theme-toggle-box">
+                    <div class="theme-toggle-header">
+                        <span>Theme</span>
+                        <span id="theme-mode-label">Light Mode</span>
+                    </div>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" aria-label="Toggle light and dark mode">
+                        <span class="theme-slider"></span>
+                    </label>
+                </div>
+
                 <a href="editDetails.html" class="btn btn-edit">Edit Details</a>
                 <button class="btn btn-danger-alt" id="logout-btn">Sign Out</button>
             </aside>
@@ -91,6 +102,7 @@
         </div>
     </div>
 
+    <script src="theme.js"></script>
     <script type="module" src="account.js"></script>
 </body>
 </html>

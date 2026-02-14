@@ -6,8 +6,8 @@
 
 :root {
     --bg: #e6edf2;
-    --text: #3f5253;
-    --muted: #5f7071;
+    --text: #334748;
+    --muted: #4f6263;
     --primary: #6e9495;
     --primary-strong: #5f8485;
     --panel-border: 2px solid #b8c8c9;
@@ -21,10 +21,25 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.6;
+    letter-spacing: 0.1px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+}
+
+p,
+li,
+label,
+input,
+select,
+button {
+    font-weight: 500;
 }
 
 body::before {
@@ -782,6 +797,269 @@ footer {
     font-family: 'Inter', sans-serif;
 }
 
+.theme-toggle-box {
+    margin-top: -0.5rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid #d9e4e6;
+    border-radius: 12px;
+    background: #f8fafb;
+}
+
+.theme-toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    inset: 0;
+    background: #cad8dd;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.theme-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 4px;
+    left: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease;
+}
+
+.theme-switch input:checked + .theme-slider {
+    background: var(--primary);
+}
+
+.theme-switch input:checked + .theme-slider::before {
+    transform: translateX(26px);
+}
+
+.dark-mode {
+    background: #1f2a30;
+    color: #e6f2f8;
+}
+
+.dark-mode header {
+    background: #27343b;
+    border-bottom-color: #32424a;
+    box-shadow: 0 2px 10px rgba(8, 15, 19, 0.35);
+}
+
+.dark-mode nav a,
+.dark-mode .logo,
+.dark-mode .hero-profile h1,
+.dark-mode .section-header h2,
+.dark-mode .profile-header-meta h2,
+.dark-mode .stat-label,
+.dark-mode .account-details p,
+.dark-mode .account-details span {
+    color: #e2f0f8;
+}
+
+.dark-mode p,
+.dark-mode li,
+.dark-mode label,
+.dark-mode .hero-subtitle,
+.dark-mode .section-subtitle,
+.dark-mode .card-description,
+.dark-mode .info-description,
+.dark-mode .concept-card p,
+.dark-mode .room-concept,
+.dark-mode .account-details strong,
+.dark-mode .theme-toggle-header span {
+    color: #d8e8f1;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode strong,
+.dark-mode th,
+.dark-mode .stat-number,
+.dark-mode .stat-label,
+.dark-mode .room-details strong,
+.dark-mode .card-game h3,
+.dark-mode .concept-card h4,
+.dark-mode .section-title {
+    color: #eef7fb;
+}
+
+.dark-mode .info-box p,
+.dark-mode .info-box li,
+.dark-mode .info-box ul,
+.dark-mode .info-box-game p,
+.dark-mode .objectives-list li,
+.dark-mode .leaderboard-table td,
+.dark-mode .leaderboard-table td:nth-child(4),
+.dark-mode .leaderboard-table td:nth-child(5) {
+    color: #dbeaf2;
+}
+
+.dark-mode .room-concept,
+.dark-mode .section-subtitle,
+.dark-mode .concept-example,
+.dark-mode .tutorial-note {
+    color: #cfe2ed;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #a9c1cf;
+    opacity: 1;
+}
+
+.dark-mode .leaderboard-table thead {
+    color: #f4fbff;
+}
+
+.dark-mode nav a:hover {
+    background: rgba(120, 158, 179, 0.2);
+}
+
+.dark-mode .hero-profile,
+.dark-mode .profile-main,
+.dark-mode .profile-grid .info-box,
+.dark-mode .stat-box {
+    background: #2a363d;
+    border-color: #3a4b54;
+    box-shadow: 0 8px 24px rgba(7, 14, 18, 0.35);
+}
+
+.dark-mode .section-header,
+.dark-mode .profile-header-meta,
+.dark-mode .account-details p {
+    border-bottom-color: #3a4b54;
+}
+
+.dark-mode .section-subtitle,
+.dark-mode .account-details strong {
+    color: #afc3cf;
+}
+
+.dark-mode .account-details,
+.dark-mode .theme-toggle-box {
+    background: #223038;
+    border-color: #34444d;
+}
+
+.dark-mode .theme-toggle-header {
+    color: #e2f0f8;
+}
+
+.dark-mode .theme-slider {
+    background: #52646f;
+}
+
+.dark-mode .theme-switch input:checked + .theme-slider {
+    background: #6e9495;
+}
+
+.dark-mode .grade-badge {
+    box-shadow: 0 2px 10px rgba(98, 138, 160, 0.3);
+}
+
+.dark-mode .hero,
+.dark-mode .hero-home,
+.dark-mode .hero-game,
+.dark-mode .hero-chemistry,
+.dark-mode .hero-leaderboard,
+.dark-mode .info-box,
+.dark-mode .info-box-home,
+.dark-mode .info-box-game,
+.dark-mode .profile-main,
+.dark-mode .stat-box,
+.dark-mode .stat-box-home,
+.dark-mode .card-game,
+.dark-mode .concept-card,
+.dark-mode .leaderboard-wrapper,
+.dark-mode .leaderboard-table {
+    background: #2a363d;
+    border-color: #3a4b54;
+    box-shadow: 0 8px 24px rgba(7, 14, 18, 0.35);
+}
+
+.dark-mode .hero p,
+.dark-mode .hero-subtitle,
+.dark-mode .info-description,
+.dark-mode .card-description,
+.dark-mode .concept-card p,
+.dark-mode .leaderboard-table td,
+.dark-mode .info-box li,
+.dark-mode .objectives-list li {
+    color: #c8dbe6;
+}
+
+.dark-mode .hero h1,
+.dark-mode .info-box h3,
+.dark-mode .card-game h3,
+.dark-mode .concept-card h4,
+.dark-mode .leaderboard-table th,
+.dark-mode .stat-number,
+.dark-mode .stat-label,
+.dark-mode .room-details strong,
+.dark-mode .section-title,
+.dark-mode .section-header h2 {
+    color: #e6f2f8;
+}
+
+.dark-mode .leaderboard-table tbody tr:hover,
+.dark-mode .room-item,
+.dark-mode .account-details,
+.dark-mode .change-picture-box,
+.dark-mode .stat-box {
+    background: #233038;
+}
+
+.dark-mode .form-group input,
+.dark-mode .search-box input,
+.dark-mode .level-filter select,
+.dark-mode #search-input,
+.dark-mode #room-select {
+    background: #233038;
+    color: #e6f2f8;
+    border-color: #3a4b54;
+}
+
+.dark-mode .login-container,
+.dark-mode .register-container,
+.dark-mode .edit-details-card,
+.dark-mode .email-change-card {
+    background: #2a363d;
+    border-color: #3a4b54;
+    box-shadow: 0 8px 24px rgba(7, 14, 18, 0.35);
+}
+
+.dark-mode footer {
+    background: #2a363d;
+}
+
 .btn-danger-alt {
     width: 100%;
     background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
@@ -1484,6 +1762,77 @@ a.card-game {
 .concept-card.room-theme-light:hover {
     border-color: #f0d574;
     box-shadow: 0 0 0 1px rgba(247, 224, 125, 0.75), 0 14px 28px rgba(218, 187, 83, 0.44);
+}
+
+/* Dark mode contrast fixes for themed cards and dropdown */
+.dark-mode .nav-dropdown-menu {
+    background: #f7fbff;
+    border-color: #d6e3ee;
+}
+
+.dark-mode .nav-dropdown-menu a {
+    color: #2f4658;
+}
+
+.dark-mode .nav-dropdown-menu a:hover {
+    background: #eaf3fb;
+    color: #1f3445;
+}
+
+.dark-mode .room-item.room-theme-ice .room-number,
+.dark-mode .room-item.room-theme-ice .room-details strong,
+.dark-mode .room-item.room-theme-ice .room-concept,
+.dark-mode .card-game.room-theme-ice h3,
+.dark-mode .card-game.room-theme-ice .card-description,
+.dark-mode .card-game.room-theme-ice .card-concept,
+.dark-mode .card-game.room-theme-ice .room-badge,
+.dark-mode .concept-card.room-theme-ice h4,
+.dark-mode .concept-card.room-theme-ice p,
+.dark-mode .concept-card.room-theme-ice .concept-room,
+.dark-mode .concept-card.room-theme-ice .concept-number {
+    color: #2c5876;
+}
+
+.dark-mode .room-item.room-theme-acid .room-number,
+.dark-mode .room-item.room-theme-acid .room-details strong,
+.dark-mode .room-item.room-theme-acid .room-concept,
+.dark-mode .card-game.room-theme-acid h3,
+.dark-mode .card-game.room-theme-acid .card-description,
+.dark-mode .card-game.room-theme-acid .card-concept,
+.dark-mode .card-game.room-theme-acid .room-badge,
+.dark-mode .concept-card.room-theme-acid h4,
+.dark-mode .concept-card.room-theme-acid p,
+.dark-mode .concept-card.room-theme-acid .concept-room,
+.dark-mode .concept-card.room-theme-acid .concept-number {
+    color: #4b6a1f;
+}
+
+.dark-mode .room-item.room-theme-rust .room-number,
+.dark-mode .room-item.room-theme-rust .room-details strong,
+.dark-mode .room-item.room-theme-rust .room-concept,
+.dark-mode .card-game.room-theme-rust h3,
+.dark-mode .card-game.room-theme-rust .card-description,
+.dark-mode .card-game.room-theme-rust .card-concept,
+.dark-mode .card-game.room-theme-rust .room-badge,
+.dark-mode .concept-card.room-theme-rust h4,
+.dark-mode .concept-card.room-theme-rust p,
+.dark-mode .concept-card.room-theme-rust .concept-room,
+.dark-mode .concept-card.room-theme-rust .concept-number {
+    color: #7a4330;
+}
+
+.dark-mode .room-item.room-theme-light .room-number,
+.dark-mode .room-item.room-theme-light .room-details strong,
+.dark-mode .room-item.room-theme-light .room-concept,
+.dark-mode .card-game.room-theme-light h3,
+.dark-mode .card-game.room-theme-light .card-description,
+.dark-mode .card-game.room-theme-light .card-concept,
+.dark-mode .card-game.room-theme-light .room-badge,
+.dark-mode .concept-card.room-theme-light h4,
+.dark-mode .concept-card.room-theme-light p,
+.dark-mode .concept-card.room-theme-light .concept-room,
+.dark-mode .concept-card.room-theme-light .concept-number {
+    color: #1d3446;
 }
 
 .card-header {
