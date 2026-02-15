@@ -66,6 +66,97 @@ body::after {
     z-index: -1;
 }
 
+.lottie-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14, 21, 27, 0.6);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lottie-loader-card {
+    width: min(320px, 88vw);
+    background: #ffffff;
+    border: 1px solid #d8e3e7;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(9, 16, 21, 0.25);
+    padding: 1.25rem 1.1rem 1.1rem;
+    text-align: center;
+}
+
+.lottie-loader-animation {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.lottie-loader-text {
+    color: #2f4758;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.lottie-fallback .lottie-loader-animation,
+.lottie-fallback .lottie-theme-animation {
+    position: relative;
+}
+
+.lottie-fallback .lottie-loader-animation::before,
+.lottie-fallback .lottie-theme-animation::before {
+    content: '';
+    width: 36px;
+    height: 36px;
+    border: 4px solid #d3e3ea;
+    border-top-color: #6e9495;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    animation: spinLoader 0.8s linear infinite;
+}
+
+.lottie-theme-flash {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #ffffff;
+    border: 1px solid #d7e3e9;
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(9, 16, 21, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.lottie-theme-flash.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lottie-theme-animation {
+    width: 42px;
+    height: 42px;
+}
+
+.lottie-theme-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2f4758;
+}
+
+@keyframes spinLoader {
+    to { transform: rotate(360deg); }
+}
+
 /* Header / Navigation */
 header {
     background: #ffffff;

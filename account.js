@@ -5,6 +5,7 @@ import {
     sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { ref, get, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { ANIMATION_PATHS, showThemeToggleLottie } from "./uiAnimations.js";
 
 let currentUser = null;
 let currentUserEmail = null;
@@ -192,6 +193,10 @@ function initProfileThemeToggle() {
         const mode = toggleInput.checked ? 'dark' : 'light';
         localStorage.setItem(storageKey, mode);
         applyTheme(mode);
+        showThemeToggleLottie({
+            mode,
+            animationPath: mode === 'dark' ? ANIMATION_PATHS.darkMode : ANIMATION_PATHS.lightMode
+        });
     });
 }
 

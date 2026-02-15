@@ -1,5 +1,6 @@
 import { db } from "./firebase.js";
 import { ref, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { ANIMATION_PATHS, showLottieLoader, hideLottieLoader } from "./uiAnimations.js";
 
 const roomSelect = document.getElementById('room-select');
 const leaderboardBody = document.getElementById('leaderboard-body');
@@ -24,6 +25,12 @@ function formatTime(seconds) {
 }
 
 async function updateLeaderboard() {
+    showLottieLoader({
+        id: 'leaderboard-loader',
+        message: 'Refreshing leaderboard...',
+        animationPath: ANIMATION_PATHS.leaderboard
+    });
+
     const selectedRoom = roomSelect.value;
     const dbRef = ref(db);
 
@@ -58,6 +65,8 @@ async function updateLeaderboard() {
     } catch (error) {
         console.error("Firebase Fetch Error:", error);
         leaderboardBody.innerHTML = "<tr><td colspan='5'>Error loading data. Check console for details.</td></tr>";
+    } finally {
+        hideLottieLoader('leaderboard-loader');
     }
 }
 

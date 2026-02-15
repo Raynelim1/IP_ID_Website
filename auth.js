@@ -7,6 +7,7 @@ import {
     ref, 
     set 
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { ANIMATION_PATHS, showLottieLoader, hideLottieLoader } from "./uiAnimations.js";
 
 // show messages on page
 function showStatus(message, isSuccess) {
@@ -109,12 +110,17 @@ async function handleLogin(e) {
 
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        showStatus('Login successful!', true);
-        
+        showStatus('Login successful! Preparing your dashboard...', true);
+        showLottieLoader({
+            message: 'Entering Lab Breakout...',
+            animationPath: ANIMATION_PATHS.login
+        });
+
         setTimeout(() => {
             window.location.href = 'home.html';
-        }, 1500);
+        }, 1300);
     } catch (error) {
+        hideLottieLoader();
         showStatus('Login failed: ' + error.message, false);
     }
 }
