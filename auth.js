@@ -14,9 +14,38 @@ function showStatus(message, isSuccess) {
     const messageBox = document.getElementById('message-box');
     if (messageBox) {
         messageBox.textContent = message;
-        messageBox.style.display = 'block';
-        messageBox.style.color = isSuccess ? "#28a745" : "#dc3545";
+        messageBox.className = `auth-message ${isSuccess ? 'auth-success' : 'auth-error'}`;
+        messageBox.setAttribute('role', isSuccess ? 'status' : 'alert');
     }
+}
+
+function mapAuthError(code, flow) {
+    const commonMessages = {
+        'auth/invalid-email': 'Please enter a valid email address.',
+        'auth/network-request-failed': 'Network issue detected. Check your connection and try again.',
+        'auth/too-many-requests': 'Too many attempts. Please wait a moment and try again.'
+    };
+
+    const loginMessages = {
+        'auth/invalid-credential': 'Incorrect email or password. Please try again.',
+        'auth/user-not-found': 'No account found for this email.',
+        'auth/wrong-password': 'Incorrect email or password. Please try again.',
+        'auth/missing-password': 'Please enter your password.'
+    };
+
+    const registerMessages = {
+        'auth/email-already-in-use': 'This email is already registered. Please log in instead.',
+        'auth/weak-password': 'Password is too weak. Use at least 6 characters and one number.',
+        'auth/missing-password': 'Please create a password.'
+    };
+
+    if (commonMessages[code]) return commonMessages[code];
+    if (flow === 'login' && loginMessages[code]) return loginMessages[code];
+    if (flow === 'register' && registerMessages[code]) return registerMessages[code];
+
+    return flow === 'login'
+        ? 'Unable to log in right now. Please try again.'
+        : 'Unable to create your account right now. Please try again.';
 }
 
 // check if email is valid
@@ -92,7 +121,7 @@ async function handleRegister(e) {
 
     } catch (error) {
         console.error("Error:", error.code);
-        showStatus('Error: ' + error.message, false);
+        showStatus(mapAuthError(error.code, 'register'), false);
     }
 }
 
@@ -121,7 +150,7 @@ async function handleLogin(e) {
         }, 1300);
     } catch (error) {
         hideLottieLoader();
-        showStatus('Login failed: ' + error.message, false);
+        showStatus(mapAuthError(error.code, 'login'), false);
     }
 }
 

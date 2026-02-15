@@ -2,7 +2,7 @@ export const ANIMATION_PATHS = {
     login: "https://assets2.lottiefiles.com/packages/lf20_j1adxtyb.json",
     leaderboard: "https://assets9.lottiefiles.com/packages/lf20_usmfx6bp.json",
     lightMode: "https://assets4.lottiefiles.com/packages/lf20_kdx6cani.json",
-    darkMode: "https://assets10.lottiefiles.com/packages/lf20_n4yafac5.json"
+    darkMode: "https://assets4.lottiefiles.com/packages/lf20_kdx6cani.json"
 };
 
 const animationInstances = new Map();

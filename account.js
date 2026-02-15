@@ -10,6 +10,17 @@ import { ANIMATION_PATHS, showThemeToggleLottie } from "./uiAnimations.js";
 let currentUser = null;
 let currentUserEmail = null;
 
+function mapAccountAuthError(code) {
+    const messages = {
+        'auth/invalid-email': 'Your account email format is invalid. Please log in again.',
+        'auth/user-not-found': 'User account not found. Please log in again.',
+        'auth/network-request-failed': 'Network issue detected. Check your connection and try again.',
+        'auth/too-many-requests': 'Too many requests. Please wait a moment before retrying.'
+    };
+
+    return messages[code] || 'Unable to send the reset email right now. Please try again.';
+}
+
 function formatTime(seconds) {
     if (!seconds || seconds === 0) return "0min 0.0s";
     const mins = Math.floor(seconds / 60);
@@ -159,7 +170,7 @@ async function sendResetEmailOnce() {
         await sendPasswordResetEmail(auth, currentUserEmail);
     } catch (error) {
         console.error('Error sending reset email:', error);
-        showError('Error sending reset email: ' + error.message);
+        showError(mapAccountAuthError(error.code));
     }
 }
 
@@ -246,7 +257,7 @@ function initEditDetailsPage() {
             showEditSuccess('Name changed successfully!');
         } catch (error) {
             console.error('Error updating profile:', error);
-            showEditError('Error updating profile: ' + error.message);
+            showEditError('Unable to update your profile now. Please try again.');
         }
     });
 }
@@ -270,7 +281,7 @@ function initResetRequestPage() {
             showSuccess(passwordPage ? 'Password reset email resent successfully!' : 'Email resent successfully!');
         } catch (error) {
             console.error('Error resending reset email:', error);
-            showError('Error resending reset email: ' + error.message);
+            showError(mapAccountAuthError(error.code));
         }
     });
 }
