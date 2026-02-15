@@ -1,5 +1,10 @@
 IP_ID_Website
 
+
+link:
+https://raynelim1.github.io/IP_ID_Website/
+
+
 This website is designed to engage students and teens (ages 13–18) who are interested in chemistry and enjoy immersive experiences like VR escape rooms. The site serves as a companion to the chemistry game, encouraging players to visit, interact, and deepen their understanding of chemistry concepts through interactive content and challenges.
 By combining educational material with game-inspired features, the website aims to make learning chemistry more fun, motivating, and accessible for young learners.
 
